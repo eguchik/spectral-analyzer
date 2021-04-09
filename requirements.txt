@@ -1,3 +1,6 @@
 django
 numpy
 pandas
+django-cleanup
+matplotlib
+seaborn
