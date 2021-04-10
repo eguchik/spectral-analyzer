@@ -3,6 +3,3 @@ from django.db import models
 class FileUpload(models.Model):
     upload_file = models.FileField(upload_to='')
     wl_corr = models.IntegerField()
-
-class ImageCreate(models.Model):
-    file = models.FileField(upload_to='fig/')

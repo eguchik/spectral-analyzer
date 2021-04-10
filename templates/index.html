@@ -5,41 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spectral Data Analysis</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class='container'>
-        <h1 class="mt-5 mb-5">Spectral Data Preprocessing</h1>
-
-
-        <form method="POST" class="post-form" enctype="multipart/form-data">
-            {% csrf_token %} 
-            {{ uploadfile.upload_file }}
-            <p>Wavelength for zero-point adjustment {{ uploadfile.wl_corr }}</p>
-            
-            <div class='row'>
-                <div class="d-grid gap-2">
-                    <button class="btn btn-outline-dark" type="submit">Send</button>
+    <div class="container">
+        <h1 class="mt-5 mb-5">Spectral Data Analysis</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Spectral data preprocessing</h5>
+                        <p class="card-text">紫外-可視吸収スペクトルデータのベースライン補正、波長補正を行い、スペクトルデータを可視化します。</p>
+                        <a href="analysis1" class="btn btn-outline-secondary">Go</a>
+                    </div>
                 </div>
             </div>
-        </form>
-
-
-        
-        <div>{% for file in uploadfile %}
-            <p>
-                <a href="%7B%7B%20file.upload_file.url%20%7D%7D">{{ file.upload_file.name }}</a>
-            </p>{% endfor %}</div>
-        <div>
-            <img src="data:image/png;base64,%20%7B%7B%20graph%20%7C%20safe%20%7D%7D%20" alt="">
+            <div class="col-sm-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Deriverative transformation of spectral data</h5>
+                        <p class="card-text">任意の次数にてスペクトルデータの微分変換を行います。スペクトルの微分変換後、Savitzky-Golayフィルターによりスムージング処理を行います。</p>
+                        <a href="#" class="btn btn-outline-secondary">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Independent component analysis</h5>
+                        <p class="card-text">独立成分分析によりスペクトルデータに含まれる潜在的な因子を推定します。アルゴリズムにはfastICAを使用します。解析を行う場合、あらかじめ成分数を指定する必要があります。</p>
+                        <a href="#" class="btn btn-outline-secondary">Go</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        
     </div>
-
-
-
 </body>
-
 </html>

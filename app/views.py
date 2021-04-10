@@ -8,13 +8,14 @@ import pandas as pd
 import os
 from myproject.settings import MEDIA_ROOT
 from django.core.files.base import ContentFile
-from .models import ImageCreate
 
 
+def index(request):
+    return render(request, 'index.html')
 
 
 # @login_required
-def index(request):
+def analysis1(request):
 
     FileUpload.objects.all().delete() # モデルの初期化
 
@@ -38,14 +39,14 @@ def index(request):
             
             uploadfile = FileUpload.objects.all()
 
-            return render(request, 'output.html', {'uploadfile': uploadfile, 'graph': graph})
+            return render(request, 'output1.html', {'uploadfile': uploadfile, 'graph': graph})
 
 
     else:
         uploadfile = UploadFileForm()
-        return render(request, 'index.html', {'uploadfile': uploadfile})
+        return render(request, 'analysis1.html', {'uploadfile': uploadfile})
 
 
-def output(request):
+def output1(request):
     uploadfile = FileUpload.objects.all()
-    return render(request, 'output.html', {'uploadfile': uploadfile})
+    return render(request, 'output1.html', {'uploadfile': uploadfile})
