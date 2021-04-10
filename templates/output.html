@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="en">
+<html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
-<body>  
-    <div>
+<body>
+    <div class='container'>
+        <h1 class="mt-5 mb-5">Spectral Data Preprocessing</h1>
+
+
         <img src="data:image/png;base64, {{ graph | safe }} " alt="">
-    </div>
 
-    <div>
         {% for file in uploadfile %}
-        <p><a href="{{ file.upload_file.url }}">{{ file.upload_file.name }}</a></p>
+        <p>Download: <a href="{{ file.upload_file.url }}">{{ file.upload_file.name }}</a></p>
         {% endfor %}
+        
     </div>
 
-</body> 
+
+
+</body>
+
 </html>
+
+
+
+
