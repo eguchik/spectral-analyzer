@@ -4,13 +4,23 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+import io
+import matplotlib
+matplotlib.use("Agg")
+import base64
 
-def write_into_csv(csv_data):
 
-    response = HttpResponse(csv_data, content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename="download.csv"'
 
-    return response
+
+def get_image():
+ buffer = io.BytesIO()
+ plt.savefig(buffer, format='png')
+ image_png = buffer.getvalue()
+ graph = base64.b64encode(image_png)
+ graph = graph.decode('utf-8')
+ buffer.close()
+ return graph
+
 
 
 def data_preprocessing(X, file_path, wl_corr=None,):
@@ -33,7 +43,7 @@ def data_vis(file_path):
     t = X.index.values.astype('float32')
     wl = X.columns.values.astype('float32')
 
-    f = plt.figure(figsize=(6, 6), dpi=100)
+    f = plt.figure(figsize=(6, 4), dpi=100)
     gs = f.add_gridspec(1, 1)
 
     with sns.axes_style("whitegrid"):
@@ -43,13 +53,10 @@ def data_vis(file_path):
             ax.plot(wl, X.iloc[i, :], lw=1, label=int(t[i]))
             ax.set_xlim([320, 700])
             ax.set_ylim([0, 0.1])
+            ax.set_xlabel('Wavelength / nm')
             ax.set_ylabel('Absorbance')
 
-        ax.legend(loc='upper left',
-                bbox_to_anchor=(1.05, 1.05),
-                frameon=False
-                )
-        
-        f.savefig(file_path + '/fig.png')
-    
-    return
+        ax.legend(loc='upper left', bbox_to_anchor=(1.05, 1.05),
+                 frameon=False)
+        plt.tight_layout()
+
