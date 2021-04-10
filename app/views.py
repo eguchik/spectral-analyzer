@@ -13,7 +13,7 @@ from .models import ImageCreate
 
 
 
-@login_required
+# @login_required
 def index(request):
 
     FileUpload.objects.all().delete() # モデルの初期化
