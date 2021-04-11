@@ -4,3 +4,4 @@ pandas
 django-cleanup
 matplotlib
 seaborn
+scipy
