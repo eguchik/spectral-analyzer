@@ -12,6 +12,9 @@ from .diffspc import DiffSpc
 
 
 def index(request):
+    FileUpload.objects.all().delete()
+    FileUpload2.objects.all().delete()
+
     return render(request, 'index.html')
 
 
