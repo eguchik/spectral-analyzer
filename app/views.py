@@ -20,7 +20,7 @@ def index(request):
 
 def analysis1(request):
 
-    FileUpload.objects.all().delete() # モデルの初期化
+    FileUpload.objects.all().delete() # データベースの初期化
 
     if request.method == 'POST':
         uploadfile = UploadFileForm(request.POST, request.FILES)
@@ -28,16 +28,24 @@ def analysis1(request):
 
         if uploadfile.is_valid():
             
-            uploadfile.save() # modelへ保存される
-
+            uploadfile.save()
             uploaded_file = request.FILES['upload_file']
             wl_corr = uploadfile.cleaned_data['wl_corr']
 
+
             file_path = os.path.join(MEDIA_ROOT, uploaded_file.name)
             data = pd.read_csv(file_path, index_col=0).T
-            data_preprocessing(data, file_path, wl_corr)
-        
-            data_vis(file_path)
+            y = data_preprocessing(data, file_path, wl_corr)
+
+            obj = FileUpload.objects.latest("upload_file")
+
+            obj.upload_file.name = 'preprocessed_data.csv'
+            obj.save()
+            new_file_path = os.path.join(MEDIA_ROOT, obj.upload_file.name)
+            y.T.to_csv(new_file_path)
+
+     
+            data_vis(new_file_path)
             graph = get_image()
             
             uploadfile = FileUpload.objects.all()
@@ -57,7 +65,7 @@ def output1(request):
 
 def analysis2(request):
 
-    FileUpload2.objects.all().delete() # モデルの初期化
+    FileUpload2.objects.all().delete() # データベースの初期化
 
     if request.method == 'POST':
         uploadfile = UploadFileForm2(request.POST, request.FILES)
@@ -65,7 +73,7 @@ def analysis2(request):
 
         if uploadfile.is_valid():
             
-            uploadfile.save() # modelへ保存される
+            uploadfile.save() 
 
             uploaded_file = request.FILES['upload_file']
             n_differential = uploadfile.cleaned_data['n_differential']
@@ -79,13 +87,20 @@ def analysis2(request):
             data = pd.read_csv(file_path, index_col=0).T
 
             diffspc = DiffSpc(n_differential=n_differential, polyorder=polyorder, window_length=window_length, n_smooth=n_smooth)
-            D_df = diffspc.fit(data)
-            D_df.T.to_csv(file_path)
+            y = diffspc.fit(data)
+
+            obj = FileUpload2.objects.latest("upload_file")
+            obj.upload_file.name = 'differentiated_data.csv'
+            obj.save()
+            new_file_path = os.path.join(MEDIA_ROOT, obj.upload_file.name)
+
+
+            y.T.to_csv(new_file_path)
         
-            data_vis2(file_path)
+            data_vis2(new_file_path)
             graph = get_image()
             
-            uploadfile = FileUpload.objects.all()
+            uploadfile = FileUpload2.objects.all()
 
             return render(request, 'output2.html', {'uploadfile': uploadfile, 'graph': graph})
 

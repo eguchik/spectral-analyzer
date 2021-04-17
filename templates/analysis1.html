@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="ja">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spectral_data_preprocessing</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-</head>
-
-<body>
+{% block content %}
     <div class="container">
-        <h1 class="mt-5 mb-5">Spectral Data Preprocessing</h1>
+        <h3 class="mt-5 mb-3">Spectral Data Preprocessing</h3>
         <form method="POST" class="post-form" enctype="multipart/form-data">
             {% csrf_token %}
             <p>{{ uploadfile.upload_file }}</p>
@@ -23,6 +14,4 @@
             </div>
         </form>
     </div>
-</body>
-
-</html>
+{% endblock %}

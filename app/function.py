@@ -35,9 +35,8 @@ def data_preprocessing(X, file_path, wl_corr=None,):
     y -= y.iloc[0, :]
     y.drop(y.index[0], inplace=True)
     y = y.sub(y[wl_corr], axis='index')
-    y.T.to_csv(file_path)
 
-    return 
+    return y
 
 
 def data_vis(file_path):
