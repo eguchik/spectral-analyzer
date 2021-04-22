@@ -1,35 +1,57 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        {% load static%}
+        <meta charset="UTF-8" />
+        <title>Spectral Analysis Tools</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>      
+        <header>
+            <a href="#" class="btn4">
+                Spectral Analysis Tools
+            </a>
+        </header>
 
-{% block content %}
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Spectral data preprocessing</h5>
-                        <p class="card-text">紫外-可視吸収スペクトルデータのベースライン補正、波長補正を行い、スペクトルデータを可視化します。</p>
-                        <a href="analysis1" class="btn btn-outline-secondary">Go</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Deriverative transformation of spectral data</h5>
-                        <p class="card-text">任意の次数にてスペクトルデータの微分変換を行います。スペクトルの微分変換後、Savitzky-Golayフィルターによりスムージング処理を行います。</p>
-                        <a href="analysis2" class="btn btn-outline-secondary">Go</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Independent component analysis</h5>
-                        <p class="card-text">独立成分分析によりスペクトルデータに含まれる潜在的な因子を推定します。アルゴリズムにはfastICAを使用します。解析を行う場合、あらかじめ成分数を指定する必要があります。</p>
-                        <a href="#" class="btn btn-outline-secondary">未実装</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-{% endblock %}
+        <nav>
+            <a href="analysis1">
+                <ul class="details">
+                    <li class="type1">
+                        <img src="{% static 'images/1.png' %}" width="290px" height="200px">
+                        <dl>
+                            <dt>Data Preprocessing</dt>
+                            <dd>紫外-可視吸収スペクトルデータのベースライン補正、波長補正を行い、スペクトルデータを可視化します。</dd>
+                        </dl>
+                    </li>
+            </a>
+        </nav>
+
+        <main>
+            <a href="analysis2">
+                <ul class="details">
+                    <li class="type1">
+                        <img src="{% static 'images/2.png' %}" width="290px" height="200px">
+                        <dl>
+                            <dt>Derivative Spectra</dt>
+                            <dd>任意の次数にてスペクトルデータの微分変換を行います。スペクトルの微分変換後、Savitzky-Golayフィルターによりスムージング処理を行います。</dd>
+                        </dl>
+                    </li>
+            </a>
+        </main>
+
+        <aside>
+            <a href="#">
+            <ul class="details">
+                <li class="type1">
+                    <img src="{% static 'images/3.png' %}" width="290px" height="200px">
+                    <dl>
+                        <dt>Independent Component Analysis</dt>
+                        <dd>独立成分分析によりスペクトルデータに含まれる潜在的な因子を推定します。アルゴリズムにはfastICAを使用します。</dd>
+                    </dl>
+                </li>
+            </a>
+        </aside>
+
+        <footer></footer>
+    </body>
+</html>
