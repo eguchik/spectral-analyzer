@@ -5,7 +5,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template:
-        "... ...... ...... ...... ...... ...... ..." 0px
+        "... ...... ...... ...... ...... ...... ..." 20px
         "... header header header header header ..." 50px
         "... ...... ...... ...... ...... ...... ..." 20px
         "... left   ...... center ...... right  ..." 200px
