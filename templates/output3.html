@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class='container'>
+        <h3 class="mt-5 mb-3">Deriverative transformation of spectral data</h3>
+        <img src="data:image/png;base64, {{ graph | safe }} " alt="">
+        {% for file in uploadfile %}
+        <p>Download: <a href="{{ file.upload_file.url }}">{{ file.upload_file.name }}</a></p>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+
+

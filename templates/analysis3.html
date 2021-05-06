@@ -8,10 +8,8 @@
         <form method="POST" class="post-form" enctype="multipart/form-data">
             {% csrf_token %}
                 <p>{{ uploadfile.upload_file }}</p>
-                <p>n_differential: {{ uploadfile.n_differential|add_class:"form-control"}}</p>
-                <p>polyorder: {{ uploadfile.polyorder }}</p>
-                <p>window_length: {{ uploadfile.window_length|add_class:"form-control"}}</p>
-                <p>n_smooth: {{ uploadfile.n_smooth|add_class:"form-control"}}</p>
+                <p>algorithm: {{ uploadfile.algo|add_class:"form-control"}}</p>
+                <p>n_components: {{ uploadfile.n_components|add_class:"form-control"}}</p>
             <div class="row">
                 <div class="d-grid gap-2">
                     <button class="btn btn-outline-dark" type="submit">Send</button>

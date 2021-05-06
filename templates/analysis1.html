@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load widget_tweaks %}
     <div class="container">
         <h3 class="mt-5 mb-3">Spectral Data Preprocessing</h3>
-        <form method="POST" class="post-form" enctype="multipart/form-data">
+        <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
             {% csrf_token %}
             <p>{{ uploadfile.upload_file }}</p>
-            <p>Wavelength for zero-point adjustment {{ uploadfile.wl_corr }}</p>
+            <p>Wavelength for zero-point adjustment: {{ uploadfile.wl_corr|add_class:"form-control" }}</p>
             <div class="row">
                 <div class="d-grid gap-2">
                     <button class="btn btn-outline-dark" type="submit">Send</button>
