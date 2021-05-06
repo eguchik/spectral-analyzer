@@ -26,10 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app',
+    'preprocessing',
+    'ica',
+    'derivatives',
     'django_cleanup.apps.CleanupConfig',
     'widget_tweaks',
-    'ica',
 ]
 
 MIDDLEWARE = [
