@@ -1,57 +1,39 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ja">
-    <head>
-        {% load static%}
-        <meta charset="UTF-8" />
-        <title>Spectral Analysis Tools</title>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
-    <body>      
-        <header>
-            <a href="#" class="btn4">
-                Spectral Analysis Tools
-            </a>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'preprocessing/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <title>Spectral Analysis</title>
+</head>
+<body>
+    <header>
+        <a href="/"><img class='home' src="{% static 'preprocessing/img/home.svg' %}" alt="home"></a>
+    </header>
+    
+    <div  class="content">
+        <h1>
+            Spectral Preprocessing, High order derivatives & Independent component analysis.
+        </h1>
+        <div class="flex-container">
+            <div class="flex-item">
+                <a href="preprocessing/analysis1"><img class="app" src="{% static 'preprocessing/img/icon1.svg' %}" alt="preprocessing_icon"></a>
+            </div>
+            <div class="flex-item">
+                <a href="derivatives/analysis2"><img class="app" src="{% static 'preprocessing/img/icon2.svg' %}" alt="derivatives_icon"></a>
+            </div>
+            <div class="flex-item">
+                <a href="ica/analysis3"><img class="app" src="{% static 'preprocessing/img/icon3.svg' %}" alt="ica_icon"></a>
+            </div>
+        </div>
+    </div>
 
-        <nav>
-            <a href="preprocessing/analysis1">
-                <ul class="details">
-                    <li class="type1">
-                        <img src="{% static 'images/1.png' %}" width="290px" height="200px">
-                        <dl>
-                            <dt>Data Preprocessing</dt>
-                            <dd>紫外-可視吸収スペクトルデータのベースライン補正、波長補正を行い、スペクトルデータを可視化します。</dd>
-                        </dl>
-                    </li>
-            </a>
-        </nav>
 
-        <main>
-            <a href="derivatives/analysis2">
-                <ul class="details">
-                    <li class="type1">
-                        <img src="{% static 'images/2.png' %}" width="290px" height="200px">
-                        <dl>
-                            <dt>Derivative Spectra</dt>
-                            <dd>任意の次数にてスペクトルデータの微分変換を行います。スペクトルの微分変換後、Savitzky-Golayフィルターによりスムージング処理を行います。</dd>
-                        </dl>
-                    </li>
-            </a>
-        </main>
 
-        <aside>
-            <a href="ica/analysis3">
-            <ul class="details">
-                <li class="type1">
-                    <img src="{% static 'images/3.png' %}" width="290px" height="200px">
-                    <dl>
-                        <dt>Independent Component Analysis (not implemented)</dt>
-                        <dd>独立成分分析によりスペクトルデータに含まれる潜在的な因子を推定します。アルゴリズムにはfastICAを使用します。</dd>
-                    </dl>
-                </li>
-            </a>
-        </aside>
 
-        <footer></footer>
-    </body>
+</body>
 </html>
