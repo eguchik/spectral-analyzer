@@ -10,13 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <title>Preprocessing</title>
 </head>
-
 <html>
     <header>
         <a href="/"><img class='home' src="{% static 'preprocessing/img/home.svg' %}" alt="home"></a>
     </header>
-
     <div>
+        <div class="space"></div>
         <h1>Preprocessing</h1>
         <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
             {% csrf_token %}
@@ -27,26 +26,16 @@
                 </div>
             </div>
             <div class="field">
-                <input type="number" name="wl_corr" required id="id_wl_corr" class="textbox" placeholder="Input wavelength for zero-point adjustment">
-                <div class="under_line"></div>
-            </div>
-
-                
-            
-    
+                <input type="number" name="wl_corr" required="" id="id_wl_corr" placeholder="Input wavelength for zero point ajustment">
+            </div>  
             <div id="preview"></div>
 
-
-            <button type="submit">
-                <p>PUSH</p>
-            </button>
-            
-            
+            <div class=button_area>
+                <button type="submit">
+                    <p>Send</p>
+                </button>
+            </div>       
         </form>
-
-
     </div>
-
     <script src="{% static 'preprocessing/js/script.js' %}"></script>
-
 </html>

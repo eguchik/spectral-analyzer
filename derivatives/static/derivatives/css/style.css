@@ -11,17 +11,10 @@
     text-align: center;
 }
 
-.content{
-    width: 100%; /*親要素いっぱい広げる*/
-    margin: 200px auto 0px;
-
-}
-
 h1{
     text-align: center;
     font-size: 24px;
     font-family: 'Noto Serif', serif;
-    
 }
 
 p{
@@ -81,7 +74,15 @@ form{
 }
 
 
-
+.textbox{
+    font-size: 16px;
+    width: 100%;
+    border-top: none;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
 
 .button_area{
     width: 25%;
@@ -108,7 +109,7 @@ button:hover{
     margin: 20px auto;
 }
 
-#id_wl_corr{
+#id_n_differential, #id_window_length, #id_n_smooth{
     font-size: 16px;
     width: 100%;
     border-top: none;
