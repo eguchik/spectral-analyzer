@@ -45,7 +45,7 @@ def data_vis(file_path):
     t = X.index.values.astype('float32')
     wl = X.columns.values.astype('float32')
 
-    f = plt.figure(figsize=(8, 4), dpi=100)
+    f = plt.figure(figsize=(6, 3), dpi=100)
     gs = f.add_gridspec(1, 1)
 
     with sns.axes_style("whitegrid"):

@@ -12,7 +12,7 @@ from .diffspc import DiffSpc
 
 
 
-def analysis2(request):
+def derivatives(request):
 
     FileUpload2.objects.all().delete() # データベースの初期化
 
@@ -51,15 +51,15 @@ def analysis2(request):
             
             uploadfile = FileUpload2.objects.all()
 
-            return render(request, 'output2.html', {'uploadfile': uploadfile, 'graph': graph})
+            return render(request, 'results.html', {'uploadfile': uploadfile, 'graph': graph})
 
 
     else:
         uploadfile = UploadFileForm2()
-        return render(request, 'analysis2.html', {'uploadfile': uploadfile})
+        return render(request, 'derivatives.html', {'uploadfile': uploadfile})
 
 
-def output2(request):
+def results(request):
     uploadfile = FileUpload2.objects.all()
-    return render(request, 'output2.html', {'uploadfile': uploadfile})
+    return render(request, 'results.html', {'uploadfile': uploadfile})
 

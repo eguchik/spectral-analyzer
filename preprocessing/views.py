@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'index.html')
 
 
-def analysis1(request):
+def preprocessing(request):
 
     FileUpload.objects.all().delete() # データベースの初期化
 
@@ -48,15 +48,15 @@ def analysis1(request):
             
             uploadfile = FileUpload.objects.all()
 
-            return render(request, 'output1.html', {'uploadfile': uploadfile, 'graph': graph})
+            return render(request, 'results.html', {'uploadfile': uploadfile, 'graph': graph})
 
 
     else:
         uploadfile = UploadFileForm()
-        return render(request, 'analysis1.html', {'uploadfile': uploadfile})
+        return render(request, 'preprocessing.html', {'uploadfile': uploadfile})
 
 
-def output1(request):
+def results(request):
     uploadfile = FileUpload.objects.all()
-    return render(request, 'output1.html', {'uploadfile': uploadfile})
+    return render(request, 'results.html', {'uploadfile': uploadfile})
 

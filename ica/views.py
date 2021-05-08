@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import UploadFileForm
-from .function import data_vis, get_image, ica
+from .function import data_vis, get_image, icar
 from django.contrib.auth.decorators import login_required
 from .models import FileUpload
 import pandas as pd
@@ -11,7 +11,7 @@ from django.core.files.base import ContentFile
 
 
 
-def analysis3(request):
+def ica(request):
     # データベースの初期化
     FileUpload.objects.all().delete()
 
@@ -27,7 +27,7 @@ def analysis3(request):
 
             file_path = os.path.join(MEDIA_ROOT, uploaded_file.name)
             
-            ics = ica(file_path, algo, n_components)
+            ics = icar(file_path, algo, n_components)
 
         
             obj = FileUpload.objects.latest("upload_file")
@@ -43,16 +43,16 @@ def analysis3(request):
             
             uploadfile = FileUpload.objects.all()
 
-            return render(request, 'output3.html', {'uploadfile': uploadfile, 'graph': graph})
+            return render(request, 'results.html', {'uploadfile': uploadfile, 'graph': graph})
 
 
     else:
         uploadfile = UploadFileForm()
-        return render(request, 'analysis3.html', {'uploadfile': uploadfile})
+        return render(request, 'ica.html', {'uploadfile': uploadfile})
 
 
-def output3(request):
+def results(request):
     uploadfile = FileUpload.objects.all()
-    return render(request, 'output3.html', {'uploadfile': uploadfile})
+    return render(request, 'results.html', {'uploadfile': uploadfile})
 
 

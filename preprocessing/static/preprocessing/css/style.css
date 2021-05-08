@@ -118,3 +118,7 @@ button:hover{
     border-right: none;
     outline: none;
 }
+
+.download_url{
+    margin: 50px auto 0;
+}
