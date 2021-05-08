@@ -28,26 +28,11 @@ p{
     font-family: 'Noto Serif', serif;
   }
 
-.flex-container{
-    width: 30%;
-    margin: 50px auto 50px;
-    display: flex;
-    justify-content: space-between;
-}
+
 
 @media screen and (max-width:480px){
     .flex-container{flex-direction:column;}
     .flex-item{margin:0 1em 1em;}
-}
-
-.app{
-    width: 100px;
-    text-align: center;
-}
-
-.app:hover{
-    transform: translateY(-10px);
-    transition: 0.3s;
 }
 
 
@@ -61,7 +46,6 @@ form{
 }
 
 
-
 .input{
     display: none;
 }
@@ -73,16 +57,6 @@ form{
     height: 200px;
 }
 
-
-.textbox{
-    font-size: 16px;
-    width: 100%;
-    border-top: none;
-    border-bottom: 1px solid black;
-    border-left: none;
-    border-right: none;
-    outline: none;
-}
 
 .button_area{
     width: 25%;
@@ -104,12 +78,11 @@ button:hover{
 }
 
 
-
 .field{
     margin: 20px auto;
 }
 
-#id_n_differential, #id_window_length, #id_n_smooth{
+#id_n_components{
     font-size: 16px;
     width: 100%;
     border-top: none;

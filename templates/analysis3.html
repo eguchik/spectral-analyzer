@@ -1,20 +1,50 @@
-
-{% extends 'base.html' %}
-
-{% block content %}
-{% load widget_tweaks %}
-    <div class="container">
-        <h3 class="mt-5 mb-3">Deriverative transformation of spectral data</h3>
-        <form method="POST" class="post-form" enctype="multipart/form-data">
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ica/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <title>Independent component analysis</title>
+</head>
+<html>
+    <header>
+        <a href="/"><img class='home' src="{% static 'ica/img/home.svg' %}" alt="home"></a>
+    </header>
+    <div>
+        <div class="space"></div>
+        <h1>Independent component analysis</h1>
+        <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
             {% csrf_token %}
-                <p>{{ uploadfile.upload_file }}</p>
-                <p>algorithm: {{ uploadfile.algo|add_class:"form-control"}}</p>
-                <p>n_components: {{ uploadfile.n_components|add_class:"form-control"}}</p>
-            <div class="row">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-outline-dark" type="submit">Send</button>
+            <div id="drop-zone">
+                <p>Drop csv file here.</p>
+                <div class='input'>
+                    <input type="file" name="upload_file" required="" id="id_upload_file">
                 </div>
             </div>
+            <div class="field">
+                <p>
+                    Algorithm: 
+                    <select name="algo" required="" id="id_algo">
+                        <option value="FastICA" selected>FastICA</option>
+                        <option value="InfoMax">InfoMax</option>
+                        <option value="JADE">JADE</option>
+                    </select>
+                </p>
+            </div>
+            <div class="field">
+                <input type="number" name="n_components" required="" id="id_n_components" placeholder="Number of components">
+            </div>  
+            <div id="preview"></div>
+            <div class=button_area>
+                <button type="submit">
+                    <p>Send</p>
+                </button>
+            </div>       
         </form>
-    </div>
-{% endblock %}
+    </div>  
+    <script src="{% static 'ica/js/script.js' %}"></script>
+</html>

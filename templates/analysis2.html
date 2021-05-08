@@ -27,17 +27,17 @@
             </div>
 
             <div class="field">
-                <input type="number" name="n_differential" class="form-control" required="" id="id_n_differential" placeholder="Input n_differential">
+                <input type="number" name="n_differential" class="form-control" required="" id="id_n_differential" placeholder="Order of derivatives">
             </div>  
 
-            <p>polyorder: </p>
+            <p> Order of the polynomial: </p>
             <ul id="id_polyorder">
-                <li>
+                <li class="flex-item">
                     <label for="id_polyorder_0">
-                        <input type="radio" name="polyorder" value="2" required="" id="id_polyorder_0">2
+                        <input type="radio" name="polyorder" value="2" required="" id="id_polyorder_0" checked>2
                     </label>
                 </li>
-                <li>
+                <li class="flex-item">
                     <label for="id_polyorder_1">
                         <input type="radio" name="polyorder" value="4" required="" id="id_polyorder_1">4
                     </label>
@@ -45,17 +45,12 @@
             </ul>
 
             <div class="field">
-                <input type="number" name="window_length" class="form-control" required="" id="id_window_length" placeholder="Input window_length">
+                <input type="number" name="window_length" class="form-control" required="" id="id_window_length" placeholder="Length of the filter window">
             </div>  
 
             <div class="field">
-                <input type="number" name="n_smooth" class="form-control" required="" id="id_n_smooth" placeholder="Input n_smooth">
+                <input type="number" name="n_smooth" class="form-control" required="" id="id_n_smooth" placeholder="Number of smoothing operations">
             </div>  
-
-
-
-
-
             <div id="preview"></div>
             <div class=button_area>
                 <button type="submit">
