@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'preprocessing/css/style.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
-    <title>Spectral Analysis</title>
+    <title>Preprocessing</title>
 </head>
 
 <html>
@@ -20,12 +20,33 @@
         <h1>Preprocessing</h1>
         <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
             {% csrf_token %}
-            <label>
-                Select from files{{ uploadfile.upload_file }}
-            </label>
+            <div id="drop-zone">
+                <p>Drop csv file here.</p>
+                <div class='input'>
+                    <input type="file" name="upload_file" required id="id_upload_file">
+                </div>
+            </div>
+            <div class="field">
+                <input type="number" name="wl_corr" required id="id_wl_corr" class="textbox" placeholder="Input wavelength for zero-point adjustment">
+                <div class="under_line"></div>
+            </div>
+
+                
             
-            <p>Wavelength for zero-point adjustment: {{ uploadfile.wl_corr }}</p>
-            <button type="submit">Send</button>
+    
+            <div id="preview"></div>
+
+
+            <button type="submit">
+                <p>PUSH</p>
+            </button>
+            
+            
         </form>
+
+
     </div>
+
+    <script src="{% static 'preprocessing/js/script.js' %}"></script>
+
 </html>

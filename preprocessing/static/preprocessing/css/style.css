@@ -12,7 +12,7 @@
 }
 
 .content{
-    width: 100%;
+    width: 100%; /*親要素いっぱい広げる*/
     margin: 200px auto 0px;
 
 }
@@ -23,6 +23,16 @@ h1{
     font-family: 'Noto Serif', serif;
     
 }
+
+p{
+    font-size: 16px;
+    font-family: 'Noto Serif', serif;
+}
+
+::placeholder {
+    font-size: 16px;
+    font-family: 'Noto Serif', serif;
+  }
 
 .flex-container{
     width: 30%;
@@ -47,20 +57,61 @@ h1{
 }
 
 
-.post-form{
-    width: 100%;
-    margin: 20px auto 20px;
+form{
+    width: 20%;
+    margin: 50px auto 50px;
+    align-items: center;
 }
 
 
-label{
-    color: #ffffff;
-    background-color: #384878;
-    cursor: pointer;
-    text-align: center;
-}
 
-
-input[type="file"] {
+.input{
     display: none;
+}
+
+#drop-zone{
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed; 
+    height: 200px;
+    margin: 0px auto 0px;
+}
+
+
+.textbox{
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.under_line{
+    position: relative;
+    border-top: 1px solid #000000; 
+    margin: 0 0 10px 0;
+}
+
+
+button{
+    margin: 50px auto 0;
+    width: 50%;
+    height: 40px;
+    border: 1px solid rgb(88, 88, 88);
+    text-align: center;
+    background: #fff;
+}
+
+button:hover{
+    margin: 50px auto 0;
+    width: 50%;
+    height: 40px;
+    text-align: center;
+    border: thin;
+    background: rgb(88, 88, 88);
+    color: white;
+    transition: 0.3s;
+}
+
+.field{
+    margin: 20px auto 20px;
 }
