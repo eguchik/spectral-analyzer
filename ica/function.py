@@ -40,10 +40,8 @@ def data_vis(file_path):
             ax.set_xlim([320, 700])
             ax.set_xlabel('Wavelength / nm')
             ax.set_ylabel('Signal intensity')
-
-        ax.legend(loc='upper left', bbox_to_anchor=(1.05, 1.05),
-                 frameon=False)
         plt.tight_layout()
+        
 
 
 def icar(file_path, algo, n_components):

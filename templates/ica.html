@@ -21,10 +21,8 @@
             {% csrf_token %}
             <div id="drop-zone">
                 <p>Drop csv file here.</p>
-                <div class='input'>
-                    <input type="file" name="upload_file" required="" id="id_upload_file">
-                </div>
             </div>
+            <input type="file" name="upload_file" required id="id_upload_file">
             <div class="field">
                 <p>
                     Algorithm: 
@@ -36,12 +34,13 @@
                 </p>
             </div>
             <div class="field">
-                <input type="number" name="n_components" required="" id="id_n_components" placeholder="Number of components">
+                <label>Number of components</label><br>
+                <input type="number" name="n_components" required="" id="id_n_components" placeholder="input">
             </div>  
             <div id="preview"></div>
             <div class=button_area>
                 <button type="submit">
-                    <p>Send</p>
+                    <p>Analysis</p>
                 </button>
             </div>       
         </form>

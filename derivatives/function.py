@@ -42,9 +42,5 @@ def data_vis2(file_path):
             ax.set_ylim([-0.000007, 0.000007])
             ax.set_xlabel('Wavelength / nm')
             ax.set_ylabel('$\mathsf{d^4A}$' '/' '$\mathsf{d\lambda^4}$')
-
-
-        ax.legend(loc='upper left', bbox_to_anchor=(1.05, 1.05),
-                 frameon=False)
-        plt.tight_layout()
+            plt.tight_layout()
 

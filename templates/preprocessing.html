@@ -21,21 +21,19 @@
             {% csrf_token %}
             <div id="drop-zone">
                 <p>Drop csv file here.</p>
-                <div class='input'>
-                    <input type="file" name="upload_file" required id="id_upload_file">
-                </div>
             </div>
+            <input type="file" name="upload_file" required id="id_upload_file">
             <div class="field">
-                <input type="number" name="wl_corr" required="" id="id_wl_corr" placeholder="Wavelength for zero point ajustment">
+                <label>Wavelength for zero point ajustment</label><br>
+                <input type="number" name="wl_corr" required="" id="id_wl_corr" placeholder="input">
             </div>  
             <div id="preview"></div>
-
-            <div class=button_area>
-                <button type="submit">
-                    <p>Send</p>
-                </button>
-            </div>       
+            <div class="button_area">
+                <button type="submit">Analyze</button>
+            </div>
         </form>
+
+        
     </div>
     <script src="{% static 'preprocessing/js/script.js' %}"></script>
 </html>

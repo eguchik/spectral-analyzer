@@ -17,7 +17,7 @@
     <div>
         <div class="space"></div>
         <h1>Results</h1>
-    <div class="field">
+    <div class="results">
         <p><img src="data:image/png;base64, {{ graph | safe }} " alt=""></p>
         {% for file in uploadfile %}
         <p class="download_url">Download: <a href="{{ file.upload_file.url }}">{{ file.upload_file.name }}</a></p>

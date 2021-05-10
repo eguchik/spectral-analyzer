@@ -1,7 +1,9 @@
+/* メイン画面の指定 */
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Noto Serif', serif;
 }
 
 .home{
@@ -11,17 +13,22 @@
     text-align: center;
 }
 
+.content{
+    width: 100%; /*親要素いっぱい広げる*/
+    margin: 200px auto 0px;
+
+}
+
+
+
 h1{
     text-align: center;
     font-size: 24px;
     font-family: 'Noto Serif', serif;
+    
 }
 
-p{
-    text-align: center;
-    font-size: 16px;
-    font-family: 'Noto Serif', serif;
-}
+
 
 ::placeholder {
     font-size: 16px;
@@ -52,66 +59,50 @@ p{
 
 
 .space{
-    margin: 100px auto 0;
+    margin: 50px auto 0;
 }
+
+
+/* ドロップフィールド */ 
+#drop-zone{
+    margin: 0px auto 0px;
+    border: 1px dashed black; 
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Noto Serif', serif;
+    font-size: 24px;
+    color: gray;
+
+}
+
 
 form{
     width: 25%;
     margin: 50px auto;
-}
-
-
-
-.input{
-    display: none;
-}
-
-#drop-zone{
-    margin: 0px auto 0px;
-    border: 1px dashed; 
-    width: 100%;
-    height: 200px;
-}
-
-
-.textbox{
     font-size: 16px;
-    width: 100%;
-    border-top: none;
-    border-bottom: 1px solid black;
-    border-left: none;
-    border-right: none;
-    outline: none;
-}
-
-.button_area{
-    width: 25%;
-    margin: 70px auto 0px;
-}
-
-button{
-    width: 100%;
-    margin: 0px auto;
-    border: 1px solid rgb(88, 88, 88);
-    color: black;
-    background: #fff;
-}
-
-button:hover{
-    background: rgb(0, 0, 0);
-    color: white;
-    transition: 0.3s;
+    font-family: 'Noto Serif', serif;
 }
 
 
 
+/* 数値入力フィールド */
 .field{
+    text-align: left;
     margin: 20px auto;
+    font-size: 16px;
+    font-family: 'Noto Serif', serif;
+}
+
+.field label{
+    text-align: left;
 }
 
 #id_n_differential, #id_window_length, #id_n_smooth{
     font-size: 16px;
-    width: 100%;
+    width: 20%;
     border-top: none;
     border-bottom: 1px solid black;
     border-left: none;
@@ -121,10 +112,42 @@ button:hover{
 
 #id_polyorder{
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 li{
     list-style: none;
     margin: 0 20px;
 }
+
+/* ボタン */
+
+.button_area{
+    text-align: center;
+}
+button{
+    border: 1px solid black;
+    background: white;
+    font-size: 20px;
+    font-family: 'Noto Serif', serif;
+}
+
+button:hover{
+    background: black;
+    color: white;
+    transition: 0.3s;
+}
+
+
+
+/* Results画面用CSS */
+
+.download_url{
+    margin: 50px auto 0;
+}
+
+.results{
+    text-align: center;
+}
+
+

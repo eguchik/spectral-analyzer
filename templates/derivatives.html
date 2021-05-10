@@ -21,16 +21,14 @@
             {% csrf_token %}
             <div id="drop-zone">
                 <p>Drop csv file here.</p>
-                <div class='input'>
-                    <input type="file" name="upload_file" required="" id="id_upload_file">
-                </div>
             </div>
-
+            <input type="file" name="upload_file" required id="id_upload_file">
             <div class="field">
-                <input type="number" name="n_differential" class="form-control" required="" id="id_n_differential" placeholder="Order of derivatives">
+                <label>Order of derivatives</label><br>
+                <input type="number" name="n_differential" class="form-control" required="" id="id_n_differential" placeholder="input">
             </div>  
 
-            <p> Order of the polynomial: </p>
+            <label> Order of the polynomial: </label>
             <ul id="id_polyorder">
                 <li class="flex-item">
                     <label for="id_polyorder_0">
@@ -45,16 +43,18 @@
             </ul>
 
             <div class="field">
-                <input type="number" name="window_length" class="form-control" required="" id="id_window_length" placeholder="Length of the filter window">
+                <label>Length of the filter window</label><br>
+                <input type="number" name="window_length" class="form-control" required="" id="id_window_length" placeholder="input">
             </div>  
 
             <div class="field">
-                <input type="number" name="n_smooth" class="form-control" required="" id="id_n_smooth" placeholder="Number of smoothing operations">
+                <label>Number of smoothing operations</label><br>
+                <input type="number" name="n_smooth" class="form-control" required="" id="id_n_smooth" placeholder="input">
             </div>  
             <div id="preview"></div>
             <div class=button_area>
                 <button type="submit">
-                    <p>Send</p>
+                    <p>Analysis</p>
                 </button>
             </div>       
         </form>
