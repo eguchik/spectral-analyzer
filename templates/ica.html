@@ -23,16 +23,18 @@
                 <p>Drop csv file here.</p>
             </div>
             <input type="file" name="upload_file" required id="id_upload_file">
-            <div class="field">
-                <p>
-                    Algorithm: 
-                    <select name="algo" required="" id="id_algo">
-                        <option value="FastICA" selected>FastICA</option>
-                        <option value="InfoMax">InfoMax</option>
-                        <option value="JADE">JADE</option>
-                    </select>
-                </p>
+
+
+            <div class="field"> 
+                <label>Algorithm</label><br>
+                <input type="radio" id="id_algo" name="algo" value="FastICA" checked>
+                <label for="id_algo">FastICA</label>
+                <input type="radio" id="id_algo" name="algo" value="InfoMax">
+                <label for="id_algo">InfoMax</label>
+                <input type="radio" id="id_algo" name="algo" value="JADE"
+                <label for="id_algo">JADE</label>
             </div>
+
             <div class="field">
                 <label>Number of components</label><br>
                 <input type="number" name="n_components" required="" id="id_n_components" placeholder="input">
