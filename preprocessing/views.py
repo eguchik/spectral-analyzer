@@ -18,7 +18,7 @@ def index(request):
 
 def preprocessing(request):
 
-    FileUpload.objects.all().delete() # データベースの初期化
+    FileUpload.objects.all().delete()
 
     if request.method == 'POST':
         uploadfile = UploadFileForm(request.POST, request.FILES)
