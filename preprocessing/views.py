@@ -29,6 +29,8 @@ def preprocessing(request):
             uploadfile.save()
             uploaded_file = request.FILES['upload_file']
             wl_corr = uploadfile.cleaned_data['wl_corr']
+            wl_range_start = uploadfile.cleaned_data['wl_range_start']
+            wl_range_end = uploadfile.cleaned_data['wl_range_end']
 
 
             file_path = os.path.join(MEDIA_ROOT, uploaded_file.name)
@@ -43,7 +45,7 @@ def preprocessing(request):
             y.T.to_csv(new_file_path)
 
      
-            data_vis(new_file_path)
+            data_vis(new_file_path, wl_range_start, wl_range_end)
             graph = get_image()
             
             uploadfile = FileUpload.objects.all()

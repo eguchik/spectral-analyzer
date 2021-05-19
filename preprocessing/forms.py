@@ -8,4 +8,4 @@ class UploadFileForm(forms.ModelForm):
 
     class Meta:
         model = FileUpload
-        fields = ('upload_file', 'wl_corr',)
+        fields = ('upload_file', 'wl_corr', 'wl_range_start', 'wl_range_end')
