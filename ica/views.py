@@ -24,10 +24,15 @@ def ica(request):
             uploaded_file = request.FILES['upload_file']
             algo = uploadfile.cleaned_data['algo']
             n_components = uploadfile.cleaned_data['n_components']
+            wl_range_start = uploadfile.cleaned_data['wl_range_start']
+            wl_range_end = uploadfile.cleaned_data['wl_range_end']
+            
+
+
 
             file_path = os.path.join(MEDIA_ROOT, uploaded_file.name)
             
-            ics = icar(file_path, algo, n_components)
+            ics = icar(file_path, algo, n_components, wl_range_start, wl_range_end)
 
         
             obj = FileUpload.objects.latest("upload_file")
@@ -38,7 +43,7 @@ def ica(request):
             ics.to_csv(new_file_path, index=False)
 
 
-            data_vis(new_file_path)
+            data_vis(new_file_path, wl_range_start, wl_range_end)
             graph = get_image()
             
             uploadfile = FileUpload.objects.all()

@@ -29,6 +29,8 @@ def derivatives(request):
             polyorder = uploadfile.cleaned_data['polyorder']
             window_length = uploadfile.cleaned_data['window_length']
             n_smooth = uploadfile.cleaned_data['n_smooth']
+            wl_range_start = uploadfile.cleaned_data['wl_range_start']
+            wl_range_end = uploadfile.cleaned_data['wl_range_end']
 
             
 
@@ -46,7 +48,7 @@ def derivatives(request):
 
             y.T.to_csv(new_file_path)
         
-            data_vis2(new_file_path)
+            data_vis2(new_file_path, wl_range_start, wl_range_end)
             graph = get_image()
             
             uploadfile = FileUpload2.objects.all()

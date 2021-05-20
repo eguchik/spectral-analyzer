@@ -11,4 +11,4 @@ class UploadFileForm(forms.ModelForm):
         model = FileUpload
 
         # 利用するモデルのフィールドを指定
-        fields = ('upload_file', 'algo', 'n_components')
+        fields = ('upload_file', 'algo', 'n_components', 'wl_range_start', 'wl_range_end')

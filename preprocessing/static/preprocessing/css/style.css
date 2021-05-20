@@ -9,7 +9,7 @@
 .home{
     width: 20px;
     height: 20px;
-    margin: 50px;
+    margin: 50px 50px 10px 50px;
     text-align: center;
 }
 
@@ -58,7 +58,7 @@ h1{
 
 
 .space{
-    margin: 25px auto 0;
+    margin: 10px auto 0;
 }
 
 
