@@ -15,7 +15,6 @@
         <a href="/"><img class='home' src="{% static 'derivatives/img/home.svg' %}" alt="home"></a>
     </header>
     <div>
-        <div class="space"></div>
         <h1>High order derivatives</h1>
         <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
             {% csrf_token %}
@@ -41,16 +40,7 @@
             <div class="field">
                 <label>スムージング回数</label><br>
                 <input type="number" name="n_smooth" class="form-control" required="" id="id_n_smooth" placeholder="input">
-            </div>  
-            <div class="field">
-                <label>可視化する波長範囲 (min)</label><br>
-                <input type="number" name="wl_range_start" class="form-control" required="" id="id_wl_range_start" placeholder="input" value=300>
-            </div>  
-            <div class="field">
-                <label>可視化する波長範囲 (max)</label><br>
-                <input type="number" name="wl_range_end" class="form-control" required="" id="id_wl_range_end" placeholder="input" value=700>
-            </div>  
-            <div id="preview"></div>
+            </div>
             <div class=button_area>
                 <button type="submit">
                     <p>Analysis</p>

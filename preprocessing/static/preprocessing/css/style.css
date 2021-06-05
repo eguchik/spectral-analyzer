@@ -57,9 +57,6 @@ h1{
 }
 
 
-.space{
-    margin: 10px auto 0;
-}
 
 
 /* ドロップフィールド */ 
@@ -99,7 +96,7 @@ form{
     text-align: left;
 }
 
-#id_wl_corr, #id_wl_range_start, #id_wl_range_end{
+#id_wl_corr {
     font-size: 16px;
     width: 20%;
     border-top: none;
@@ -139,4 +136,8 @@ button:hover{
 
 .results{
     text-align: center;
+}
+
+.graph{
+    width: 80%;
 }

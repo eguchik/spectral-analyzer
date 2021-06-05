@@ -1,13 +1,11 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .forms import UploadFileForm
-from .function import data_vis, get_image, icar
-from django.contrib.auth.decorators import login_required
+from .function import icar
 from .models import FileUpload
 import pandas as pd
 import os
 from myproject.settings import MEDIA_ROOT
-from django.core.files.base import ContentFile
+from .plot_graph import plot_data
 
 
 
@@ -42,13 +40,12 @@ def ica(request):
             new_file_path = os.path.join(MEDIA_ROOT, obj.upload_file.name)
             ics.to_csv(new_file_path, index=False)
 
+            plot = plot_data(new_file_path)
 
-            data_vis(new_file_path, wl_range_start, wl_range_end)
-            graph = get_image()
             
             uploadfile = FileUpload.objects.all()
 
-            return render(request, 'results.html', {'uploadfile': uploadfile, 'graph': graph})
+            return render(request, 'results.html', {'uploadfile': uploadfile, 'plot': plot})
 
 
     else:

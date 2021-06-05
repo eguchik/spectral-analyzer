@@ -1,14 +1,11 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .forms import UploadFileForm2
-from .function import get_image, data_vis2
-from django.contrib.auth.decorators import login_required
 from .models import FileUpload2
 import pandas as pd
 import os
 from myproject.settings import MEDIA_ROOT
-from django.core.files.base import ContentFile
 from .diffspc import DiffSpc
+from .plot_graph import plot_data
 
 
 
@@ -29,8 +26,6 @@ def derivatives(request):
             polyorder = uploadfile.cleaned_data['polyorder']
             window_length = uploadfile.cleaned_data['window_length']
             n_smooth = uploadfile.cleaned_data['n_smooth']
-            wl_range_start = uploadfile.cleaned_data['wl_range_start']
-            wl_range_end = uploadfile.cleaned_data['wl_range_end']
 
             
 
@@ -47,13 +42,12 @@ def derivatives(request):
 
 
             y.T.to_csv(new_file_path)
+            plot= plot_data(new_file_path)      
         
-            data_vis2(new_file_path, wl_range_start, wl_range_end)
-            graph = get_image()
             
             uploadfile = FileUpload2.objects.all()
 
-            return render(request, 'results.html', {'uploadfile': uploadfile, 'graph': graph})
+            return render(request, 'results.html', {'uploadfile': uploadfile, 'plot': plot})
 
 
     else:

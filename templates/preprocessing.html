@@ -14,34 +14,22 @@
     <header>
         <a href="/"><img class='home' src="{% static 'preprocessing/img/home.svg' %}" alt="home"></a>
     </header>
-    <div>
-        <div class="space"></div>
-        <h1>Preprocessing</h1>
-        <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
-            {% csrf_token %}
-            <div id="drop-zone">
-                <p>csvファイルをドラック＆ドロップ</p>
-            </div>
-            <input type="file" name="upload_file" required id="id_upload_file">
-            <div class="field">
-                <label>ゼロ点補正する波長</label><br>
-                <input type="number" name="wl_corr" required="" id="id_wl_corr" placeholder="input" value=700>
-            </div> 
-            <div class="field">
-                <label>可視化波長範囲 (min)</label><br>
-                <input type="number" name="wl_range_start" required="" id="id_wl_range_start" value=320>
-            </div>  
-            <div class="field">
-                <label>可視化波長範囲 (max)</label><br>
-                <input type="number" name="wl_range_end" required="" id="id_wl_range_end" value=700>
-            </div>  
-            <div id="preview"></div>
-            <div class="button_area">
-                <button type="submit">Analyze</button>
-            </div>
+    <h1>Preprocessing</h1>
+    <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
+        {% csrf_token %}
+        <div id="drop-zone">
+            <p>csvファイルをドラック＆ドロップ</p>
+        </div>
+        <input type="file" name="upload_file" required id="id_upload_file">
+        <div class="field">
+            <label>ゼロ点補正する波長</label><br>
+            <input type="number" name="wl_corr" required="" id="id_wl_corr" placeholder="input" value=700>
+        </div> 
+        <div class="button_area">
+            <button type="submit">Analyze</button>
+        </div>
         </form>
 
-        
-    </div>
+    
     <script src="{% static 'preprocessing/js/script.js' %}"></script>
 </html>
