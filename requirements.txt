@@ -5,6 +5,4 @@ django-cleanup
 matplotlib
 seaborn
 scipy
-django-widget-tweaks
 pyper
-rpy2

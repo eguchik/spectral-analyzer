@@ -39,11 +39,14 @@ def data_preprocessing(X, file_path, wl_corr=None,):
     return y
 
 
-def data_vis(file_path):
+def data_vis(file_path, wl_range_start, wl_range_end):
     
     X = pd.read_csv(file_path, index_col=0).T
+    X = X.loc[:, wl_range_start : wl_range_end]
     t = X.index.values.astype('float32')
     wl = X.columns.values.astype('float32')
+
+
 
     f = plt.figure(figsize=(6, 3), dpi=200)
     gs = f.add_gridspec(1, 1)
@@ -53,8 +56,6 @@ def data_vis(file_path):
         ax = f.add_subplot(gs[0, 0])
         for i in range(len(t)):
             ax.plot(wl, X.iloc[i, :], lw=1, label=int(t[i]), color=cm.gray(i/len(t)))
-            ax.set_xlim([320, 700])
-            ax.set_ylim([0, 0.08])
             ax.set_xlabel('Wavelength / nm')
             ax.set_ylabel('Absorbance')
         plt.tight_layout()

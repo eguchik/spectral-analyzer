@@ -20,27 +20,35 @@
         <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
             {% csrf_token %}
             <div id="drop-zone">
-                <p>Drop csv file here.</p>
+                <p>csvファイルをドラック＆ドロップ</p>
             </div>
             <input type="file" name="upload_file" required id="id_upload_file">
             <div class="field">
-                <label>Order of derivatives</label><br>
-                <input type="number" name="n_differential" class="form-control" required="" id="id_n_differential" placeholder="input">
+                <label>微分次数</label><br>
+                <input type="number" name="n_differential" class="form-control" required="" id="id_n_differential" placeholder="input" value=4>
             </div>  
             <div class="field"> 
-                <label> Order of the polynomial</label><br>
+                <label>多項式</label><br>
                 <input type="radio" id="id_polyorder_0" name="polyorder" value=2 checked>
                 <label for="id_polyorder_0">2</label>
                 <input type="radio" id="id_polyorder_1" name="polyorder" value=4>
                 <label for="id_polyorder_1">4</label>
             </div>
             <div class="field">
-                <label>Length of the filter window</label><br>
+                <label>フィルター幅</label><br>
                 <input type="number" name="window_length" class="form-control" required="" id="id_window_length" placeholder="input">
             </div>  
             <div class="field">
-                <label>Number of smoothing operations</label><br>
+                <label>スムージング回数</label><br>
                 <input type="number" name="n_smooth" class="form-control" required="" id="id_n_smooth" placeholder="input">
+            </div>  
+            <div class="field">
+                <label>可視化する波長範囲 (min)</label><br>
+                <input type="number" name="wl_range_start" class="form-control" required="" id="id_wl_range_start" placeholder="input" value=300>
+            </div>  
+            <div class="field">
+                <label>可視化する波長範囲 (max)</label><br>
+                <input type="number" name="wl_range_end" class="form-control" required="" id="id_wl_range_end" placeholder="input" value=700>
             </div>  
             <div id="preview"></div>
             <div class=button_area>
@@ -51,4 +59,16 @@
         </form>
     </div>
     <script src="{% static 'derivatives/js/script.js' %}"></script>
+    <script>
+        const input = document.getElementById("id_window_length");
+
+        input.addEventListener("change", updateValue);
+
+        function updateValue(e) {
+            if (e.target.value % 2 == 0) {
+            alert("フィルター幅は奇数のみ有効です");
+            e.target.value = "";
+        }
+        }
+    </script>
 </html>

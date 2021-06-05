@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     'ica',
     'derivatives',
     'django_cleanup.apps.CleanupConfig',
-    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

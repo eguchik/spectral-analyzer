@@ -43,3 +43,5 @@ function previewFile(file) {
         previewFile.appendChild(img);
     };
 }
+
+

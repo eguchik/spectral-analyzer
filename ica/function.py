@@ -23,9 +23,10 @@ def get_image():
 
 
 
-def data_vis(file_path):
+def data_vis(file_path, wl_range_start, wl_range_end):
     
     X = pd.read_csv(file_path, index_col=0).T
+    X = X.loc[:, wl_range_start : wl_range_end]
     t = X.index.values.astype('float32')
     wl = X.columns.values.astype('float32')
 
@@ -37,27 +38,28 @@ def data_vis(file_path):
         ax = f.add_subplot(gs[0, 0])
         for i in range(len(t)):
             ax.plot(wl, X.iloc[i, :], lw=1, label=int(t[i]), color=cm.gray(i/len(t)))
-            ax.set_xlim([320, 700])
             ax.set_xlabel('Wavelength / nm')
             ax.set_ylabel('Signal intensity')
         plt.tight_layout()
         
 
 
-def icar(file_path, algo, n_components):
-    data = pd.read_csv(file_path)
+def icar(file_path, algo, n_components, wl_range_start, wl_range_end):
+    data = pd.read_csv(file_path, index_col=0).T
+    data = data.loc[: ,wl_range_start : wl_range_end].T
+    wl = data.index.values.astype('float32')
 
     # Rのインスタンスを作る
     r = pyper.R(use_pandas='True')
 
     # PythonのオブジェクトをRに渡す
     r.assign('data', data)
+    r.assign('wl', wl)
     r.assign('n_components', n_components)
 
     # Rのコードを実行する
     r("library(ica)")
-    r("wl <- data[c(136:511),1]")
-    r("X  <- data[c(136:511),-1]")
+    r("X  <- data")
 
     if algo == 'FastICA':
         r("a <- icafast(X, n_components)")
