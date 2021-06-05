@@ -20,13 +20,13 @@
         <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
             {% csrf_token %}
             <div id="drop-zone">
-                <p>Drop csv file here.</p>
+                <p>csvファイルをドラック＆ドロップ</p>
             </div>
             <input type="file" name="upload_file" required id="id_upload_file">
 
 
             <div class="field"> 
-                <label>Algorithm</label><br>
+                <label>ICAのアルゴリズム</label><br>
                 <input type="radio" id="id_algo" name="algo" value="FastICA" checked>
                 <label for="id_algo">FastICA</label>
                 <input type="radio" id="id_algo" name="algo" value="InfoMax">
@@ -36,15 +36,15 @@
             </div>
 
             <div class="field">
-                <label>Number of components</label><br>
+                <label>コンポーネント数</label><br>
                 <input type="number" name="n_components" required="" id="id_n_components" placeholder="input">
             </div>  
             <div class="field">
-                <label>Wavelength range start</label><br>
+                <label>解析する波長範囲 (min)</label><br>
                 <input type="number" name="wl_range_start" required="" id="id_wl_range_start" placeholder="input" value=320>
             </div>  
             <div class="field">
-                <label>Wavelength range end</label><br>
+                <label>解析する波長範囲 (max)</label><br>
                 <input type="number" name="wl_range_end" required="" id="id_wl_range_end" placeholder="input" value=700>
             </div>  
             <div id="preview"></div>
