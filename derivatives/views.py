@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from .forms import UploadFileForm2
+from .plot_graph import plot_data
 from .models import FileUpload2
 import pandas as pd
 import os
 from myproject.settings import MEDIA_ROOT
 from .diffspc import DiffSpc
-from .plot_graph import plot_data
 
 
 
@@ -42,8 +42,7 @@ def derivatives(request):
 
 
             y.T.to_csv(new_file_path)
-            plot= plot_data(new_file_path)      
-        
+            plot = plot_data(new_file_path)   
             
             uploadfile = FileUpload2.objects.all()
 

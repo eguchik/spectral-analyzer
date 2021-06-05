@@ -12,5 +12,3 @@ class FileUpload2(models.Model):
     polyorder = models.IntegerField(default=0, choices=POLYORDER_CHOICE)
     window_length = models.IntegerField()
     n_smooth = models.IntegerField()
-    wl_range_start = models.IntegerField(default=300)
-    wl_range_end = models.IntegerField(default=700)

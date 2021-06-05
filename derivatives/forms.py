@@ -15,9 +15,7 @@ class UploadFileForm2(forms.ModelForm):
         'n_differential', 
         'polyorder', 
         'window_length', 
-        'n_smooth',
-        'wl_range_start',
-        'wl_range_end',)
+        'n_smooth')
         # ウィジェットを上書き
         widgets = {
             'polyorder': forms.RadioSelect,

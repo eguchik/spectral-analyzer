@@ -36,7 +36,7 @@ def preprocessing(request):
             obj.save()
             new_file_path = os.path.join(MEDIA_ROOT, obj.upload_file.name)
             data.to_csv(new_file_path)
-            plot= plot_data(new_file_path)      
+            plot = plot_data(new_file_path)      
             uploadfile = FileUpload.objects.all()
 
             return render(request, 'results.html', {'uploadfile': uploadfile, 'plot': plot})
