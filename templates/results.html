@@ -14,19 +14,19 @@
     <header>
         <a href="/"><img class='home' src="{% static 'preprocessing/img/home.svg' %}" alt="home"></a>
     </header>
-    <h1>Results</h1>
-        
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <div class="graph">
-        {% autoescape off %}
-        {{ plot }}
-        {% endautoescape %}
-    </div>
-
-    <div class="results">
-        {% for file in uploadfile %}
-        <p class="download_url">Download: <a href="{{ file.upload_file.url }}">{{ file.upload_file.name }}</a></p>
-        {% endfor %}  
+    <div class="result">
+        <h1>Results</h1> 
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <div class="graph">
+            {% autoescape off %}
+            {{ plot }}
+            {% endautoescape %}
+        </div>
+        <div>
+            {% for file in uploadfile %}
+            <p class="download_url">Download: <a href="{{ file.upload_file.url }}">{{ file.upload_file.name }}</a></p>
+            {% endfor %}  
+        </div>
     </div>
         
 

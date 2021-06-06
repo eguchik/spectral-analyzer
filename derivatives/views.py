@@ -5,7 +5,7 @@ from .models import FileUpload2
 import pandas as pd
 import os
 from myproject.settings import MEDIA_ROOT
-from .diffspc import DiffSpc
+from .derivspc import DerivSpc
 
 
 
@@ -30,10 +30,14 @@ def derivatives(request):
             
 
             file_path = os.path.join(MEDIA_ROOT, uploaded_file.name)
-            data = pd.read_csv(file_path, index_col=0).T
+            data = pd.read_csv(file_path, index_col=0)
 
-            diffspc = DiffSpc(n_differential=n_differential, polyorder=polyorder, window_length=window_length, n_smooth=n_smooth)
-            y = diffspc.fit(data)
+            derivspc = DerivSpc(n_differential=n_differential,
+                        polyorder=polyorder,
+                        window_length=window_length,
+                        n_smooth=n_smooth)
+                        
+            y = derivspc.fit(data)
 
             obj = FileUpload2.objects.latest("upload_file")
             obj.upload_file.name = 'differentiated_data.csv'
@@ -41,7 +45,7 @@ def derivatives(request):
             new_file_path = os.path.join(MEDIA_ROOT, obj.upload_file.name)
 
 
-            y.T.to_csv(new_file_path)
+            y.to_csv(new_file_path)
             plot = plot_data(new_file_path)   
             
             uploadfile = FileUpload2.objects.all()

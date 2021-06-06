@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import UploadFileForm
-from .function import icar
+from .ica import icar
 from .models import FileUpload
 import pandas as pd
 import os

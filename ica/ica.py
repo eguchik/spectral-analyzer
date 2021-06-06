@@ -1,6 +1,5 @@
 import pandas as pd
 import pyper
-import matplotlib
 
 
 def icar(file_path, algo, n_components, wl_range_start, wl_range_end):

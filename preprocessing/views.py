@@ -3,9 +3,10 @@ from .forms import UploadFileForm
 from .models import FileUpload
 import os
 from myproject.settings import MEDIA_ROOT
-from .spectral_preprocessing import preprocessing
 from .plot_graph import plot_data
 import pandas as pd
+
+
 
 
 def index(request):
