@@ -2,32 +2,31 @@
 {% load static %}
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'preprocessing/css/style.css' %}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
-    <title>Preprocessing</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'preprocessing/css/style.css' %}">
+  <title>Spectral preprocessing</title>
 </head>
-<html>
-    <header>
-        <a href="/"><img class='home' src="{% static 'preprocessing/img/home.svg' %}" alt="home"></a>
-    </header>
-    <h1>Preprocessing</h1>
-    <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
-        {% csrf_token %}
-        <div id="drop-zone">
-            <p>csvファイルをドラック＆ドロップ</p>
-        </div>
-        <input type="file" name="upload_file" required id="id_upload_file"><br>
-        <label>ゼロ点補正する波長</label><br>
-        <input type="number" name="wl_corr" required="" id="id_wl_corr" placeholder="input" value=700> 
-        <div class="button_area">
-            <button type="submit">Analyze</button>
-        </div>
-        </form>
-
+<body>
+  <header>
+    <a href="/"><img class='home' src="{% static 'preprocessing/img/home.svg' %}" alt="home"></a>
+  </header>
+  <h1>Spectral Preprocessing</h1>
+  <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
+    {% csrf_token %}
+    <div id="file-zone">
+      <p>Drop here!!</p>
+      <input type="file" name="upload_file" id="id_upload_file" required="">
+    </div>
+    <div class="input_form">ゼロに補正する波長 (nm)
+      <input type="number" name="wl_corr" required="" id="id_wl_corr" placeholder="input" value="">
+      <div id="wl_corr_alert"></div>
+    </div>
+      <button type="submit">Go!!</button>
+  </form>
+  <script src="{% static 'preprocessing/js/script.js' %}"></script>
     
-    <script src="{% static 'preprocessing/js/script.js' %}"></script>
+</form>
+</body>
 </html>

@@ -5,28 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'preprocessing/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'preprocessing/css/index.css' %} " media="screen and (min-width: 481px)">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <title>Spectral Preprocessing, High order derivatives & Independent component analysis.</title>
 </head>
 <body>
-    <header>
-        <a href="/"><img class='home' src="{% static 'preprocessing/img/home.svg' %}" alt="home"></a>
-    </header>
-    
-    <div  class="content">
-        <h1>Spectral Preprocessing, High order derivatives & Independent component analysis.</h1>
-        <div class="flex-container">
-            <div class="flex-item">
-                <a href="preprocessing"><img class="app" src="{% static 'preprocessing/img/icon1.png' %}" alt="preprocessing_icon"></a>
-            </div>
-            <div class="flex-item">
-                <a href="derivatives"><img class="app" src="{% static 'preprocessing/img/icon2.png' %}" alt="derivatives_icon"></a>
-            </div>
-            <div class="flex-item">
-                <a href="ica"><img class="app" src="{% static 'preprocessing/img/icon3.png' %}" alt="ica_icon"></a>
-            </div>
+    <h1>
+        Spectral Preprocessing, High order derivatives<br>
+        &<br>
+        Independent component analysis.
+    </h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <a href="preprocessing"><img class="app" src="{% static 'preprocessing/img/icon1.svg' %}" alt="preprocessing_icon"></a>
+        </div>
+        <div class="flex-item">
+            <a href="derivatives"><img class="app" src="{% static 'preprocessing/img/icon2.svg' %}" alt="derivatives_icon"></a>
+        </div>
+        <div class="flex-item">
+            <a href="ica"><img class="app" src="{% static 'preprocessing/img/icon3.svg' %}" alt="ica_icon"></a>
         </div>
     </div>
 

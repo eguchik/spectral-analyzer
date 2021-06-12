@@ -22,11 +22,7 @@
             {{ plot }}
             {% endautoescape %}
         </div>
-        <div>
-            {% for file in uploadfile %}
-            <p class="download_url">Download: <a href="{{ file.upload_file.url }}">{{ file.upload_file.name }}</a></p>
-            {% endfor %}  
-        </div>
+        <p class="download_url">Download: <a href="{{ obj.upload_file.url }}">{{ obj.upload_file.name }}</a></p>
     </div>
         
 

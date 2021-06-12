@@ -2,58 +2,45 @@
 {% load static %}
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'ica/css/style.css' %}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
-    <title>Independent component analysis</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'ica/css/style.css' %}">
+  <title>Independent component analysis</title>
 </head>
 <html>
-    <header>
-        <a href="/"><img class='home' src="{% static 'ica/img/home.svg' %}" alt="home"></a>
-    </header>
-    <div>
-        <div class="space"></div>
-        <h1>Independent component analysis</h1>
-        <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
-            {% csrf_token %}
-            <div id="drop-zone">
-                <p>csvファイルをドラック＆ドロップ</p>
-            </div>
-            <input type="file" name="upload_file" required id="id_upload_file">
+<header> <a href="/"><img class='home' src="{% static 'ica/img/home.svg' %}" alt="home"></a> </header>
 
+  <h1>Independent component analysis</h1>
 
-            <div class="field"> 
-                <label>ICAのアルゴリズム</label><br>
-                <input type="radio" id="id_algo" name="algo" value="FastICA" checked>
-                <label for="id_algo">FastICA</label>
-                <input type="radio" id="id_algo" name="algo" value="InfoMax">
-                <label for="id_algo">InfoMax</label>
-                <input type="radio" id="id_algo" name="algo" value="JADE"
-                <label for="id_algo">JADE</label>
-            </div>
+  <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()"> {% csrf_token %}
+  <div id="file-zone">
+    <p>Drop here!!</p> <input type="file" name="upload_file" id="id_upload_file" required="">
+  </div>
+  <div class="radio-container">
+    <div>ICAのアルゴリズム</div>
+    <div class="radio"> <input id="radio-1" name="algo" type="radio" value="FastICA" checked> <label for="radio-1" class="radio-label">FastICA</label> </div>
+    <div class="radio"> <input id="radio-2" name="algo" type="radio" value="InfoMax"> <label for="radio-2" class="radio-label">InfoMax</label> </div>
+    <div class="radio"> <input id="radio-3" name="algo" type="radio" value="JADE"> <label for="radio-3" class="radio-label">JADE</label> </div>
+  </div>
+  <div class="input_form">コンポーネント数
+    <input type="number" name="n_components" required="" id="id_n_components" placeholder="input">
+  </div>
+  <div id="alertComponents"></div>
 
-            <div class="field">
-                <label>コンポーネント数</label><br>
-                <input type="number" name="n_components" required="" id="id_n_components" placeholder="input">
-            </div>  
-            <div class="field">
-                <label>解析する波長範囲 (min)</label><br>
-                <input type="number" name="wl_range_start" required="" id="id_wl_range_start" placeholder="input" value=320>
-            </div>  
-            <div class="field">
-                <label>解析する波長範囲 (max)</label><br>
-                <input type="number" name="wl_range_end" required="" id="id_wl_range_end" placeholder="input" value=700>
-            </div>  
-            <div id="preview"></div>
-            <div class=button_area>
-                <button type="submit">
-                    <p>Analysis</p>
-                </button>
-            </div>       
-        </form>
-    </div>  
-    <script src="{% static 'ica/js/script.js' %}"></script>
+  <div class="input_form">解析する波長範囲 (min)
+    <input type="number" name="wl_range_start" required="" id="id_wl_range_start" placeholder="input" value="">
+  </div>
+  <div id="alertWavelengthStart"></div>
+
+  <div class="input_form">解析する波長範囲 (max)
+    <input type="number" name="wl_range_end" required="" id="id_wl_range_end" placeholder="input" value="">
+  </div>
+  <div id="alertWavelengthEnd"></div>
+
+  <button type="submit">Go!!</button>
+
+  </form>
+</div>
+<script src="{% static 'ica/js/script.js' %}"></script>
 </html>

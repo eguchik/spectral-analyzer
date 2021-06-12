@@ -35,17 +35,14 @@ def ica(request):
         
             obj = FileUpload.objects.latest("upload_file")
 
-            obj.upload_file.name = 'independent_components.csv'
+            obj.upload_file.name = obj.upload_file.name[:-4] + '_ica.csv'
             obj.save()
             new_file_path = os.path.join(MEDIA_ROOT, obj.upload_file.name)
             ics.to_csv(new_file_path, index=False)
 
             plot = plot_data(new_file_path)
 
-            
-            uploadfile = FileUpload.objects.all()
-
-            return render(request, 'results.html', {'uploadfile': uploadfile, 'plot': plot})
+            return render(request, 'results.html', {'obj': obj, 'plot': plot})
 
 
     else:
@@ -55,6 +52,6 @@ def ica(request):
 
 def results(request):
     uploadfile = FileUpload.objects.all()
-    return render(request, 'results.html', {'uploadfile': uploadfile})
+    return render(request, 'results.html', {'obj': obj})
 
 

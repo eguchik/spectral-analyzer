@@ -1,47 +1,62 @@
-var dropZone = document.getElementById('drop-zone');
-var preview = document.getElementById('preview');
-var fileInput = document.getElementById('id_upload_file');
+const fileZone = document.getElementById('file-zone');
+const fileInput = document.getElementById('id_upload_file');
+const reader = new FileReader();
+const input = document.getElementById("id_window_length");
 
-
-dropZone.addEventListener('dragover', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    this.style.background = '#ced1d3';
-}, false);
-
-
-dropZone.addEventListener('dragleave', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    this.style.background = '#ffffff'
-}, false);
-
-
-fileInput.addEventListener('change', function() {
-    previewFile(this.files[0]);
+fileZone.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    fileInput.parentNode.style.background = '#0080C0';
+    fileInput.parentNode.style.color = '#ffffff';
 });
 
+fileZone.addEventListener('dragleave', (event) => {
+    event.preventDefault();
+    fileInput.parentNode.style.background = '#ffffff';
+    fileInput.parentNode.style.color = '#4E4449';
+})
 
-dropZone.addEventListener('drop', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    this.style.background = '#ffffff' //背景色を白に戻す
-    var files = e.dataTransfer.files; //ドロップしたファイルを取得
-    if (files.length > 1) return alert('アップロードできるファイルは1つだけです。');
-    fileInput.files = files; //inputのvalueをドラッグしたファイルに置き換える。
-    previewFile(files[0]);
-}, false);
+fileZone.addEventListener('drop', (event) => {
+    event.preventDefault();
+    const files = event.dataTransfer.files;
+    fileInput.files = files;
+    const file = fileInput.files[0];
+    reader.readAsText(file);
+    fileInput.parentNode.style.background = '#0080C0';
+    fileInput.parentNode.style.color = '#ffffff';
+})
+
+fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    reader.readAsText(file);
+    fileInput.parentNode.style.background = '#0080C0';
+    fileInput.parentNode.style.color = '#ffffff';
+})
+
+reader.addEventListener('load', () => {
+    const row_arr = reader.result.split('\n');
+    startPoint = row_arr[1].split(',')[0];
+    endPoint = row_arr[row_arr.length - 2].split(',')[0];
+
+    document.getElementById('id_wl_corr').value = endPoint;
+})
 
 
-function previewFile(file) {
-    /* FileReaderで読み込み、プレビュー画面を表示。 */
-    var fr = new FileReader();
-    fr.onload = function() {
-        var img = document.createElement('img');
-        img.setAttribute('src', fr.result);
-        previewFile.innerHTML = '';
-        previewFile.appendChild(img);
-    };
+/* Enter keyによるフォーム送信のキャンセル */
+input.onkeypress = (event) => {
+    const key = event.keyCode || event.charCode || 0;
+    if (key == 13) {
+        event.preventDefault();
+    }
 }
 
+input.addEventListener("input", (event) => {
+    const alertWindowLength = document.getElementById('window_length_alert');
 
+    if (event.target.value % 2 == 0 && event.target.value != 0) {
+        event.preventDefault();
+        alertWindowLength.innerHTML = 'ウィンドウ幅は奇数です。';
+        alertWindowLength.style.color = 'red';
+    } else {
+        alertWindowLength.innerHTML = '';
+    }
+})

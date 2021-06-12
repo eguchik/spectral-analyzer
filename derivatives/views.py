@@ -40,17 +40,15 @@ def derivatives(request):
             y = derivspc.fit(data)
 
             obj = FileUpload2.objects.latest("upload_file")
-            obj.upload_file.name = 'differentiated_data.csv'
+            obj.upload_file.name = obj.upload_file.name[:-4] + '_derivatives.csv'
             obj.save()
             new_file_path = os.path.join(MEDIA_ROOT, obj.upload_file.name)
 
 
             y.to_csv(new_file_path)
-            plot = plot_data(new_file_path)   
-            
-            uploadfile = FileUpload2.objects.all()
+            plot = plot_data(new_file_path)
 
-            return render(request, 'results.html', {'uploadfile': uploadfile, 'plot': plot})
+            return render(request, 'results.html', {'obj': obj, 'plot': plot})
 
 
     else:

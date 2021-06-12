@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 6rem;
+  background: #0080C0;
+  color: #ffffff;
+  font-family: "Open Sans";
+}
+    
+  h1 {
+    text-align: center;
+    color: #ffffff;
+    margin: 8rem auto;
+  }
+
+/* flexbox */
+.flex-container{
+    display: flex;
+    justify-content: space-around;
+    width: 65%;
+    margin: 0 auto;
+}
+
+.app{
+    width: 220px;
+    height: 220px;
+    text-align: center;
+    }
+
+.app:hover{
+    transform: translateY(-10px);
+    transition: 0.3s;
+}
+
+@media screen and (min-width: 481px) { 
+.flex-container{
+    display: flex;
+    flex-direction: columns;
+}
+}
