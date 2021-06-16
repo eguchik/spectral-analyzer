@@ -2,12 +2,17 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+  background: #0080C0; 
+}
+
 body {
   padding: 6rem;
-  background: #0080C0;
   color: #ffffff;
   font-family: "Open Sans";
 }
+
     
   h1 {
     text-align: center;

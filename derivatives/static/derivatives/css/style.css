@@ -1,12 +1,17 @@
 * {
     box-sizing: border-box;
 }
-  
+
+html {
+  height: 100%;
+  background: #0080C0;
+}
+
 body {
     padding: 2rem;
-    background: #0080C0;
-        color: #ffffff;
+    color: #ffffff;
     font-family: "Open Sans";
+    height: 100%;
 }
   
 .home{

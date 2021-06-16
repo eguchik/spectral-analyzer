@@ -46,9 +46,10 @@ def derivatives(request):
 
 
             y.to_csv(new_file_path)
-            plot = plot_data(new_file_path)
+            plot = plot_data(new_file_path, 0)
+            plot2 = plot_data(new_file_path, 1)
 
-            return render(request, 'results.html', {'obj': obj, 'plot': plot})
+            return render(request, 'results.html', {'obj': obj, 'plot': plot, 'plot2': plot2})
 
 
     else:

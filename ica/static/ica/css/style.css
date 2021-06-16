@@ -2,10 +2,14 @@
     box-sizing: border-box;
 }
   
+html {
+  height: 100%;
+  background: #0080C0; 
+}
+
 body {
     padding: 2rem;
-    background: #0080C0;
-        color: #ffffff;
+    color: #ffffff;
     font-family: "Open Sans";
 }
   
@@ -118,13 +122,3 @@ button {
   .radio input[type=radio] + .radio-label:empty:before {
     margin-right: 0;
   }
-
-  /* Results画面用CSS */
-
-.download_url{
-    margin: 25px auto 0;
-}
-
-.results{
-    text-align: center;
-}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'preprocessing/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'preprocessing/css/results.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <title>Preprocessing</title>
@@ -17,10 +17,17 @@
     <div class="result">
         <h1>Results</h1> 
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <div class="graph">
-            {% autoescape off %}
-            {{ plot }}
-            {% endautoescape %}
+        <div class="graph-container">
+            <div class="graph">
+                {% autoescape off %}
+                {{ plot }}
+                {% endautoescape %}
+            </div>
+            <div class="graph">
+                {% autoescape off %}
+                {{ plot2 }}
+                {% endautoescape %}
+            </div>
         </div>
         <p class="download_url">Download: <a href="{{ obj.upload_file.url }}">{{ obj.upload_file.name }}</a></p>
     </div>

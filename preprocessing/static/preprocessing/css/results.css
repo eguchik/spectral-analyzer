@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+    background: #0080C0; 
+  }
+
+body {
+  padding: 2rem;
+  color: #ffffff;
+  font-family: "Open Sans";
+}
+  
+.home{
+  width: 2rem;
+  height: 2rem;
+}
+  
+h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.graph-container {
+    display: flex;
+    justify-content: center;
+}
+
+.graph {
+    margin: 1rem;
+}
