@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'preprocessing',
     'ica',
     'derivatives',
+    'difference',
     'django_cleanup.apps.CleanupConfig',
 ]
 

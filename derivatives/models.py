@@ -1,6 +1,6 @@
 from django.db import models
 
-class FileUpload2(models.Model):
+class FileUpload(models.Model):
 
     POLYORDER_CHOICE = [
         (2, '2'),

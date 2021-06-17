@@ -10,6 +10,7 @@ urlpatterns = [
     path('derivatives/', include('derivatives.urls')),
     path('preprocessing/', include('preprocessing.urls')),
     path('ica/', include('ica.urls')),
+    path('difference/', include('difference.urls')),
 ]
 
 

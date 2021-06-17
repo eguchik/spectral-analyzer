@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'difference/css/style.css' %}">
+  <title>Defference spectra</title>
+</head>
+<body>
+  <header>
+    <a href="/"><img class='home' src="{% static 'difference/img/home.svg' %}" alt="home"></a>
+  </header>
+  <h1>Defference spectra</h1>
+  <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
+    {% csrf_token %}
+    <div id="file-zone">
+      <p>Drop here!!</p>
+      <input type="file" name="upload_file" id="id_upload_file" required="">
+    </div>
+      <button type="submit">Go!!</button>
+  </form>
+  <script src="{% static 'difference/js/script.js' %}"></script>
+    
+</form>
+</body>
+</html>

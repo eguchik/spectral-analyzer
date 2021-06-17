@@ -1,14 +1,14 @@
 from django import forms
 from django.contrib.admin import widgets
 import os
-from .models import FileUpload2
+from .models import FileUpload
 
 
-class UploadFileForm2(forms.ModelForm):
+class UploadFileForm(forms.ModelForm):
 
     class Meta:
         # 利用するモデルクラスを指定
-        model = FileUpload2
+        model = FileUpload
 
         # 利用するモデルのフィールドを指定
         fields = ('upload_file', 

@@ -1,0 +1,4 @@
+from django.db import models
+
+class FileUpload(models.Model):
+    upload_file = models.FileField(upload_to='')
