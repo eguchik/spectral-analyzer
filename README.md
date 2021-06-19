@@ -1,4 +1,4 @@
-# Name
+## Name
 spectral-analyzer 
 
 ## Overview
@@ -6,7 +6,7 @@ spectral-analyzer
 
 ## Requirement
 - windows10
-- python3.6
+- python 3.9
 - R-4.0.5 (パスを通しておく)
 
 ## Install
