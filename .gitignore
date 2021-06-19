@@ -6,3 +6,6 @@ myvenv
 db.sqlite3
 /static
 .DS_Store
+description
+README.md
+README.pdf
