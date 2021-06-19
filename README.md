@@ -7,7 +7,7 @@ spectral-analyzer
 ## Requirement
 - windows10
 - python3.6
-- R-4.0.5
+- R-4.0.5 (パスを通しておく)
 
 ## Install
 - git clone [Repository URL]
