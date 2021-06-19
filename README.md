@@ -1,4 +1,5 @@
-# spectral-analyzer 
+# Name
+spectral-analyzer 
 
 ## Overview
 吸収スペクトルを様々な手法で解析するツールです。
@@ -18,7 +19,7 @@
 - python manage.py migrate
 
 ## Usage
-- Spectral-Analyzer.batをクリック
+- spectral-analyzer.batをクリック
 
 ## Description
 
