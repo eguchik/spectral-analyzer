@@ -16,7 +16,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
-
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 # Application definition
 
 INSTALLED_APPS = [
