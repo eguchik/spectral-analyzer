@@ -47,7 +47,4 @@ def preprocessing(request):
         return render(request, 'preprocessing.html', {'uploadfile': uploadfile})
 
 
-def results(request):
-    uploadfile = FileUpload.objects.all()
-    return render(request, 'results.html', {'uploadfile': uploadfile})
 

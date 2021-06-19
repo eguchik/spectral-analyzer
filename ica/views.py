@@ -50,8 +50,3 @@ def ica(request):
         return render(request, 'ica.html', {'uploadfile': uploadfile})
 
 
-def results(request):
-    uploadfile = FileUpload.objects.all()
-    return render(request, 'results.html', {'obj': obj})
-
-

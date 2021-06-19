@@ -10,9 +10,8 @@ from .derivspc import DerivSpc
 
 
 def derivatives(request):
-
+    
     FileUpload.objects.all().delete() # データベースの初期化
-
     if request.method == 'POST':
         uploadfile = UploadFileForm(request.POST, request.FILES)
         
@@ -55,9 +54,3 @@ def derivatives(request):
     else:
         uploadfile = UploadFileForm()
         return render(request, 'derivatives.html', {'uploadfile': uploadfile})
-
-
-def results(request):
-    uploadfile = FileUpload.objects.all()
-    return render(request, 'results.html', {'uploadfile': uploadfile})
-

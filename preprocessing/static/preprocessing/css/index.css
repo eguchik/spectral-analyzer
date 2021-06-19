@@ -24,7 +24,7 @@ body {
 .flex-container{
     display: flex;
     justify-content: space-around;
-    width: 65%;
+    width: 70%;
     margin: 0 auto;
 }
 

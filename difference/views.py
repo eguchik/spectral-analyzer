@@ -42,8 +42,3 @@ def difference(request):
         uploadfile = UploadFileForm()
         return render(request, 'difference.html', {'uploadfile': uploadfile})
 
-
-def results(request):
-    uploadfile = FileUpload.objects.all()
-    return render(request, 'results.html', {'uploadfile': uploadfile})
-
