@@ -66,7 +66,7 @@ inputWlRangeEnd.addEventListener("input", (event) => {
 
 fileZone.addEventListener('dragover', (event) => {
     event.preventDefault();
-    fileInput.parentNode.style.background = '#0080C0';
+    fileInput.parentNode.style.background = '#ff8c00';
     fileInput.parentNode.style.color = '#ffffff';
 });
 
@@ -82,14 +82,14 @@ fileZone.addEventListener('drop', (event) => {
     fileInput.files = files;
     const file = fileInput.files[0];
     reader.readAsText(file);
-    fileInput.parentNode.style.background = '#0080C0';
+    fileInput.parentNode.style.background = '#ff8c00';
     fileInput.parentNode.style.color = '#ffffff';
 })
 
 fileInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
     reader.readAsText(file);
-    fileInput.parentNode.style.background = '#0080C0';
+    fileInput.parentNode.style.background = '#ff8c00';
     fileInput.parentNode.style.color = '#ffffff';
 })
 
