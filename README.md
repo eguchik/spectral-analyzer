@@ -12,7 +12,7 @@ spectral-analyzer
 ## Install
 - git clone [Repository URL]
 - cd spectral-analyzer
-- python -m venv myvenv
+- py -3.9 -m venv myvenv
 - myvenv\Scripts\activate
 - python -m pip install --upgrade pip
 - pip install -r requirements.txt
