@@ -60,3 +60,13 @@ input.addEventListener("input", (event) => {
         alertWavelength.innerHTML = '';
     }
 })
+
+const formElement = document.querySelector('form');
+
+formElement.addEventListener('submit', (event) => {
+    if (input.value < startPoint || input.value > endPoint) {
+        event.preventDefault();
+        alert(`ゼロに補正する波長で指定できる波長範囲は${startPoint} nm ~ ${endPoint} nm です。`);
+
+    }
+})

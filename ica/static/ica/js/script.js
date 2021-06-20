@@ -100,7 +100,11 @@ reader.addEventListener('load', () => {
     endPoint = row_arr[row_arr.length - 2].split(',')[0];
 })
 
+const formElement = document.querySelector('form');
 
-
-
-
+formElement.addEventListener('submit', (event) => {
+    if (inputComponents.value <= 0 || inputComponents.value > n_samples) {
+        event.preventDefault();
+        alert(`指定できるコンポーネント数は${n_samples}以下です。`);
+    }
+})

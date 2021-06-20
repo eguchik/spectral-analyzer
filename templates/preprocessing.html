@@ -13,7 +13,7 @@
     <a href="/"><img class='home' src="{% static 'preprocessing/img/home.svg' %}" alt="home"></a>
   </header>
   <h1>Spectral Preprocessing</h1>
-  <form method="POST" class="post-form" enctype="multipart/form-data" onSubmit="return check()">
+  <form method="POST" class="post-form" enctype="multipart/form-data">
     {% csrf_token %}
     <div id="file-zone">
       <p>Drop here!!</p>

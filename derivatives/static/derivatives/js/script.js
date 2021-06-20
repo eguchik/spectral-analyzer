@@ -60,3 +60,12 @@ input.addEventListener("input", (event) => {
         alertWindowLength.innerHTML = '';
     }
 })
+
+const formElement = document.querySelector('form');
+
+formElement.addEventListener('submit', (event) => {
+    if (input.value % 2 == 0 && input.value != 0) {
+        event.preventDefault();
+        alert('ウィンドウ幅は奇数です。');
+    }
+})
