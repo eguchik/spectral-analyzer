@@ -1,3 +1,21 @@
+const openModal = document.querySelector('#openModal');
+const modalArea = document.querySelector('#modalArea');
+const modalBg = document.querySelector('#modalArea');
+const closeModal = document.querySelector('#closeModal');
+
+openModal.addEventListener('click', () => {
+    modalArea.style.display = 'block';
+})
+
+
+closeModal.addEventListener('click', () => {
+    modalArea.style.display = 'none';
+})
+
+
+
+
+// formに関するjs
 const fileZone = document.getElementById('file-zone');
 const fileInput = document.getElementById('id_upload_file');
 const reader = new FileReader();

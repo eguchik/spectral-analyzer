@@ -42,9 +42,4 @@ def preprocessing(request):
             return render(request, 'results.html', {'obj': obj, 'plot': plot, 'plot2': plot2})
 
 
-    else:
-        uploadfile = UploadFileForm()
-        return render(request, 'preprocessing.html', {'uploadfile': uploadfile})
-
-
 

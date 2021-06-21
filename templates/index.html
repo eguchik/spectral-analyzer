@@ -18,7 +18,7 @@
     </h1>
     <div class="flex-container">
         <div class="flex-item">
-            <a href="preprocessing"><img class="app" src="{% static 'preprocessing/img/preprocessing.svg' %}" alt="preprocessing_icon"></a>
+            <a href="#"><img class="app" id="openModal" src="{% static 'preprocessing/img/preprocessing.svg' %}" alt="preprocessing_icon"></a>
         </div>
         <div class="flex-item">
             <a href="difference"><img class="app" src="{% static 'preprocessing/img/difference.svg' %}" alt="difference_icon"></a>
@@ -30,5 +30,29 @@
             <a href="ica"><img class="app" src="{% static 'preprocessing/img/ica.svg' %}" alt="ica_icon"></a>
         </div>
     </div>
+
+    <!-- モーダルエリアここから -->
+    <section id="modalArea" class="modalArea">
+        <div id="modalBg" class="modalBg"></div>
+        <div class="modalWrapper">
+            <div class="modalContents">
+                <form action="/preprocessing/"  method="POST" class="post-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div id="file-zone">
+                      <p>Drop here!!</p>
+                      <input type="file" name="upload_file" id="id_upload_file" required="">
+                    </div>
+                    <div class="input_form">ゼロに補正する波長 (nm)
+                      <input type="number" name="wl_corr" required="" id="id_wl_corr" placeholder="input" value="">
+                      <div id="wl_corr_alert"></div>
+                    </div>
+                      <button type="submit">Go!!</button>
+            </div>
+            <div id="closeModal" class="closeModal">
+            ×
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'preprocessing/js/index.js' %}"></script>
 </body>
 </html>
