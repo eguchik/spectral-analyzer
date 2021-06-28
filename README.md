@@ -34,27 +34,27 @@ Description
 - 吸収スペクトルの任意の波長のゼロ点補正
 - アップロードデータ例 (csv形式)
   <div align="left">
-    <p><img src="description/img/data1.png" width="600" /></p>
+    <p><img src="app/description/img/data1.png" width="600" /></p>
   </div>
 
 ## Difference
 - 吸収スペクトルの差吸収スペクトルの算出
 - アップロードデータ例 (csv形式)
   <div align="left">
-    <p><img src="description/img/data2.png" width="600" /></p>
+    <p><img src="app/description/img/data2.png" width="600" /></p>
   </div>
 ## Derivatives
 - 吸収スペクトルの微分変換
 - 微分スペクトルのスムージング
 - アップロードデータ例 (csv形式)
   <div align="left">
-    <p><img src="description/img/data2.png" width="600" /></p>
+    <p><img src="app/description/img/data2.png" width="600" /></p>
   </div>
 ## ICA (Independent Component Analysis)
 - スペクトルの独立成分分析
 - アップロードデータ例 (csv形式)
   <div align="left">
-    <p><img src="description/img/data2.png" width="600" /></p>
+    <p><img src="app/description/img/data2.png" width="600" /></p>
   </div>
 
 
