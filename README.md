@@ -26,12 +26,11 @@ $ docker-compose up -d --build
 
 Usage
 ===
-http://127.0.0.1:8000/
+dockerを起動後 http://127.0.0.1:8000/ をクリック
 
 
 Description
 ===
-
 ## Preprocessing
 - 吸収スペクトルのバッファー補正
 - 吸収スペクトルの任意の波長のゼロ点補正
