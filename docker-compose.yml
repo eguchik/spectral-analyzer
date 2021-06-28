@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+    user: root
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./app:/home/app"
+    working_dir: /home/app
+    command: python3 manage.py runserver 0.0.0.0:8000
