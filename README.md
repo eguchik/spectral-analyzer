@@ -10,16 +10,19 @@ Overview
 Requirement
 ===
 - Docker Desktop (Windows10, macOS)
-- Windows10の場合  
+  - Windows10の場合  
 https://qiita.com/zaki-lknr/items/db99909ba1eb27803456
-- macOSの場合  
+  - macOSの場合  
 https://docs.docker.jp/docker-for-mac/install.html
 
 
 Install
 ===
-- $ cd spectral-analyzer
-- $ docker-compose up -d --build
+```
+git clone [Repository URL]
+cd spectral-analyzer
+docker-compose up -d --build
+```
 
 Usage
 ===
