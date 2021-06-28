@@ -2,8 +2,6 @@ django
 numpy
 pandas
 django-cleanup
-matplotlib
-seaborn
 scipy
 pyper
 plotly
