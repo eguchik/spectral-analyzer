@@ -19,7 +19,6 @@ https://docs.docker.jp/docker-for-mac/install.html
 Install
 ===
 ```
-$ git clone [Repository URL]
 $ cd spectral-analyzer
 $ docker-compose up -d --build
 ```
