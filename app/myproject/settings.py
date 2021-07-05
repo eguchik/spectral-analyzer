@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'ica',
     'derivatives',
     'difference',
+    'visualization',
     'django_cleanup.apps.CleanupConfig',
 ]
 

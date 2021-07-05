@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'visualization/css/style.css' %}">
+    <title>Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <input type="file" id="inputFile">
+    <div class="container">
+        <div id="myDiv"></div>
+        <div class="config">
+            <div class="tab-wrap">
+
+                <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">全体の設定</label>
+                <div class="tab-content">
+                    <p>グラフの幅: <input type="number" id="graphWidth"></p>
+                    <p>グラフの高さ: <input type="number" id="graphHeight"></p>
+                </div>
+
+                <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">x軸の設定</label>
+                <div class="tab-content">
+                    <p>軸のタイトル: <input type="text" id="xAxisTitleText"></p>
+                    <p>軸のタイトルのサイズ: <input type="number" id="xAxisTitleFontSize"></p>
+                    <p>軸のラベルのサイズ: <input type="number" id="xAxisTickfontSize"></p>
+                    <p>目盛の向き: 
+                        <select id="xAxisTicks">
+                            <option value="inside">inside</option>
+                            <option value="outside">outside</option>
+                            <option value="">なし</option>
+                        </select>
+                    </p>
+                    <p>目盛の間隔: <input type="number" id="xAxisDtick"></p>
+                    <p>目盛の長さ: <input type="number" id="xAxisTicklen"></p>
+                    <p>目盛の幅: <input type="number" id="xAxisTickwidth"></p>
+                    <p>軸の幅: <input type="number" id="xAxisLinewidth"></p>
+                </div>
+
+                <input id="TAB-03" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-03">y軸の設定</label>
+                <div class="tab-content">
+                    <p>軸のタイトル: <input type="text" id="yAxisTitleText"></p>
+                    <p>軸のタイトルのサイズ: <input type="number" id="yAxisTitleFontSize"></p>
+                    <p>軸のラベルのサイズ: <input type="number" id="yAxisTickfontSize"></p>
+                    <p>目盛の向き: 
+                        <select id="yAxisTicks">
+                            <option value="inside">inside</option>
+                            <option value="outside">outside</option>
+                            <option value="">なし</option>
+                        </select>
+                    </p>
+                    <p>目盛の間隔: <input type="number" id="yAxisDtick"></p>
+                    <p>目盛の長さ: <input type="number" id="yAxisTicklen"></p>
+                    <p>目盛の幅: <input type="number" id="yAxisTickwidth"></p>
+                    <p>軸の幅: <input type="number" id="yAxisLinewidth"></p>
+                    <p>y=0のライン: 
+                        <select name="" id="yAxisZeroline"> 
+                            <option value="true">あり</option>
+                            <option value="false">なし</option>
+                        </select>
+                    </p>
+                    <p>y=0のラインの太さ: <input type="number" id="yAxisZerolinewidth"></p>
+                </div>
+
+                <input id="TAB-04" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-04">レジェンド</label>
+                <div class="tab-content">
+                    <p>枠線の太さ: <input type="number" id="legendBorderwidth"></p>
+                    <p>タイトル: <input type="text" id="legendTitleText"></p>
+                    <p>タイトルのフォントサイズ: <input type="number" id="legendTitleSize"></p>
+                    <p>位置 x: <input type="number" id="legendX"></p>
+                    <p>位置 y: <input type="number" id="legendY"></p>
+                </div>
+
+                <input id="TAB-05" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-05">カラー</label>
+                <div class="tab-content">
+                    <p>Selected plot: <select id="selectPlot"></select></p>
+                    <p>Color: <input type="color" id="traceLineColor"></p>
+                    <p>Line width: <input type="number" id="traceLineWidth"></p>
+                    <p>Line style:  
+                        <select id="traceLineDash">
+                            <option value="solid">Solid</option>
+                            <option value="dot">Dot</option>
+                            <option value="dashdot">Dashdot</option>
+                        </select>
+                    </p>
+
+
+            </div>
+        </div>
+    </div>        
+    <script src="{% static 'visualization/js/script.js' %}"></script>
+</body>
+</html>

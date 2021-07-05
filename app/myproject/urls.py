@@ -11,6 +11,7 @@ urlpatterns = [
     path('preprocessing/', include('preprocessing.urls')),
     path('ica/', include('ica.urls')),
     path('difference/', include('difference.urls')),
+    path('vis/', include('visualization.urls')),
 ]
 
 
