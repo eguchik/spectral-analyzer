@@ -4,7 +4,7 @@
 
 html {
   height: 100%;
-  background: #ff8c00; 
+  background: #ffffff; 
 }
 
 body {
@@ -14,34 +14,29 @@ body {
 }
 
     
-  h1 {
-    text-align: center;
-    color: #ffffff;
-    margin: 8rem auto;
-  }
+h1 {
+  text-align: center;
+  color: #756C91;
+  margin: 4rem auto;
+}
 
 /* flexbox */
 .flex-container{
     display: flex;
-    justify-content: space-around;
-    width: 70%;
+    flex-wrap: wrap;
+    width: 600px;
     margin: 0 auto;
+    align-content: flex-start;
 }
 
 .app{
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     text-align: center;
+    padding: 1rem;
     }
 
 .app:hover{
     transform: translateY(-10px);
     transition: 0.3s;
-}
-
-@media screen and (min-width: 481px) { 
-.flex-container{
-    display: flex;
-    flex-direction: columns;
-}
 }

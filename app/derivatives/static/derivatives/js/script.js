@@ -5,14 +5,14 @@ const input = document.getElementById("id_window_length");
 
 fileZone.addEventListener('dragover', (event) => {
     event.preventDefault();
-    fileInput.parentNode.style.background = '#ff8c00';
+    fileInput.parentNode.style.background = '#756C91';
     fileInput.parentNode.style.color = '#ffffff';
 });
 
 fileZone.addEventListener('dragleave', (event) => {
     event.preventDefault();
     fileInput.parentNode.style.background = '#ffffff';
-    fileInput.parentNode.style.color = '#4E4449';
+    fileInput.parentNode.style.color = '#756C91';
 })
 
 fileZone.addEventListener('drop', (event) => {
@@ -21,14 +21,14 @@ fileZone.addEventListener('drop', (event) => {
     fileInput.files = files;
     const file = fileInput.files[0];
     reader.readAsText(file);
-    fileInput.parentNode.style.background = '#ff8c00';
+    fileInput.parentNode.style.background = '#756C91';
     fileInput.parentNode.style.color = '#ffffff';
 })
 
 fileInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
     reader.readAsText(file);
-    fileInput.parentNode.style.background = '#ff8c00';
+    fileInput.parentNode.style.background = '#756C91';
     fileInput.parentNode.style.color = '#ffffff';
 })
 

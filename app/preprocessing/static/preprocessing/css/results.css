@@ -2,14 +2,14 @@
     box-sizing: border-box;
   }
 
-  html {
-    height: 100%;
-    background: #ff8c00; 
-  }
+html {
+  height: 100%;
+  background: #ffffff; 
+}
 
 body {
   padding: 2rem;
-  color: #ffffff;
+  color: #756C91;
   font-family: "Open Sans";
 }
   
@@ -20,7 +20,7 @@ body {
   
 h1 {
   text-align: center;
-  color: #ffffff;
+  color: #756C91;
 }
 
 .graph-container {

@@ -2,6 +2,22 @@
     box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+  background: #ffffff; 
+}
+
+body {
+  padding: 2rem;
+  color: #756C91;
+  font-family: "Open Sans";
+}
+  
+.home{
+  width: 2rem;
+  height: 2rem;
+}
+
 .container {
     display: flex;
     flex-direction: row;

@@ -28,7 +28,7 @@ reader.addEventListener('load', () => {
   hueList = hueList.map(x => x * 280 /hueList[hueList.length-1]);
 
   for (const hue of hueList) {
-      colorGradation.push(`hsl(${hue},100%,50%)`);
+      colorGradation.push(`hsl(${hue},80%,50%)`);
   }
 
 

@@ -4,24 +4,23 @@
 
 html {
   height: 100%;
-  background: #ff8c00;
+  background: #ffffff; 
 }
 
 body {
-    padding: 2rem;
-    color: #ffffff;
-    font-family: "Open Sans";
-    height: 100%;
+  padding: 2rem;
+  color: #756C91;
+  font-family: "Open Sans";
 }
   
 .home{
-    width: 2rem;
-    height: 2rem;
+  width: 2rem;
+  height: 2rem;
 }
   
 h1 {
-    text-align: center;
-    color: #ffffff;
+  text-align: center;
+  color: #756C91;
 }
   
 form {
@@ -31,16 +30,16 @@ form {
 }
   
 #file-zone{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 0.15rem solid #ffffff; 
-    height: 300px;
-    font-size: 24px;
-    color: #4E4449;
-    background-color: #ffffff;
-    border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.15rem solid #756C91; 
+  height: 300px;
+  font-size: 24px;
+  color: #4E4449;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
 }
   
 .input_form {
@@ -48,34 +47,35 @@ form {
 }
   
 input[type=number] {
-    width: 100%;
-    max-width: 100%;
-    border: none;
-    margin: 0.5rem 0;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
-    background: #ffffff;
-    color: #4E4449;
+  width: 100%;
+  max-width: 100%;
+  border: 0.15rem solid #756C91; 
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  background: #ffffff;
+  color: #756C91;
 }
   
 input::placeholder {
-    color: #4E4449;
+  color: #756C91;
 }
   
 button {
-    border: none;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0;
-    border-radius: 0.3rem;
-    background: #ffffff;
-    color: rgb(110, 110, 110);
-    width: auto;
+  border: 0.15rem solid #756C91; 
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.3rem;
+  background: #ffffff;
+  color: #756C91;
+  width: auto;
 }
   
-  button:hover {
-    background: rgb(255, 154, 72);
-    color: #ffffff;
+button:hover {
+  background: #756C91;
+  color: #ffffff;
 }
+  
 
 .radio-container{
     display: flex;

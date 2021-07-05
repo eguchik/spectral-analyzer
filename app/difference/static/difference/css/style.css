@@ -1,12 +1,12 @@
 * {
     box-sizing: border-box;
-  }
+}
 
-  html {
-    height: 100%;
-    background: #ff8c00; 
-  }
-
+html {
+  height: 100%;
+  background: #ffffff; 
+}
+  
 body {
   padding: 2rem;
   color: #ffffff;
@@ -20,7 +20,7 @@ body {
   
 h1 {
   text-align: center;
-  color: #ffffff;
+  color: #756C91;
 }
   
 form {
@@ -34,7 +34,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 0.15rem solid #ffffff; 
+  border: 0.15rem solid #756C91; 
   height: 300px;
   font-size: 24px;
   color: #4E4449;
@@ -43,19 +43,17 @@ form {
 }
   
 button {
-  border: none;
+  border: 0.15rem solid #756C91; 
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
   border-radius: 0.3rem;
   background: #ffffff;
-  color: rgb(110, 110, 110);
+  color: #756C91;
   width: auto;
 }
   
 button:hover {
-  background: rgb(255, 154, 72);
+  background: #756C91;
   color: #ffffff;
 }
-  
-  
   
