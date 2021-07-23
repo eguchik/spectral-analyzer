@@ -1,6 +1,6 @@
 Name
 ===
-spectral-analyzer 
+Spectral Preprocessing App 
 
 Overview
 ===
@@ -11,9 +11,9 @@ Requirement
 ===
 - Docker Desktop (Windows10, macOS)
   - Windows10の場合  
-https://qiita.com/zaki-lknr/items/db99909ba1eb27803456
+  https://qiita.com/zaki-lknr/items/db99909ba1eb27803456
   - macOSの場合  
-https://docs.docker.jp/docker-for-mac/install.html
+  https://docs.docker.jp/docker-for-mac/install.html
 
 
 Install
@@ -57,5 +57,4 @@ Description
   <div align="left">
     <p><img src="app/description/img/data2.png" width="600" /></p>
   </div>
-
 

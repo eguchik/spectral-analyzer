@@ -1,0 +1,7 @@
+django
+numpy
+pandas
+django-cleanup
+scipy
+pyper
+plotly
